@@ -94,6 +94,9 @@
     <Compile Include="Classe\Etudiant.cs" />
     <Compile Include="Classe\Section.cs" />
     <Compile Include="DAO\ConnexionSQL.cs" />
+    <Compile Include="DAO\DAOEtudiant.cs" />
+    <Compile Include="DAO\DAOSection.cs" />
+    <Compile Include="DAO\DAOUtilisateur.cs" />
     <Compile Include="DAO\Session.cs" />
     <Compile Include="WinForm\Accueil.cs">
       <SubType>Form</SubType>

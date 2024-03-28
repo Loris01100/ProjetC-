@@ -21,6 +21,10 @@ namespace _2SIO_FSI_Adminstration.Classe
 
         }
 
+        public Etudiant()
+        {
+        }
+
         public int IdEtudiant { get => idEtudiant; set => idEtudiant = value; }
         public string NomEtudiant { get => nomEtudiant; set => nomEtudiant = value; }
         public string PrenomEtudiant { get => prenomEtudiant; set => prenomEtudiant = value; }
