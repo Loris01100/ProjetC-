@@ -22,17 +22,17 @@ namespace _2SIO_FSI_Adminstration.WinForm
 
         private void InitializeComboBox()
         {
-            List<Section> listeDeSections = ObtenirLesSections(); 
+            List<Section> listSections = ObtenirSections(); 
             cbClasse.DisplayMember = "NomSection";
             cbClasse.ValueMember = "IdSection";
             
-            cbClasse.DataSource = listeDeSections;
+            cbClasse.DataSource = listSections;
             
             if (cbClasse.Items.Count > 0)
                 cbClasse.SelectedIndex = 0;
         }
 
-        private List<Section> ObtenirLesSections()
+        private List<Section> ObtenirSections()
         {
             return new List<Section>
             {
