@@ -1,4 +1,5 @@
-﻿namespace _2SIO_FSI_Adminstration.WinForm
+﻿using System.Drawing;
+namespace _2SIO_FSI_Adminstration.WinForm
 {
     partial class Connexion
     {
@@ -37,6 +38,12 @@
             this.bConnexion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
+            //
+            // CouleurGlobal
+            //
+            Color color1 = ColorTranslator.FromHtml("#499c54");
+            Color color2 = ColorTranslator.FromHtml("#3c3f41");
+            Color color3 = ColorTranslator.FromHtml("#000000");
             // 
             // pbLogo
             // 
@@ -51,7 +58,7 @@
             // lLogin
             // 
             this.lLogin.AutoSize = true;
-            this.lLogin.ForeColor = System.Drawing.Color.PaleVioletRed;
+            this.lLogin.ForeColor = color1;
             this.lLogin.Location = new System.Drawing.Point(267, 33);
             this.lLogin.Name = "lLogin";
             this.lLogin.Size = new System.Drawing.Size(63, 25);
@@ -61,7 +68,7 @@
             // lMDP
             // 
             this.lMDP.AutoSize = true;
-            this.lMDP.ForeColor = System.Drawing.Color.MediumOrchid;
+            this.lMDP.ForeColor = color1;
             this.lMDP.Location = new System.Drawing.Point(186, 79);
             this.lMDP.Name = "lMDP";
             this.lMDP.Size = new System.Drawing.Size(144, 25);
@@ -85,8 +92,8 @@
             // 
             // bConnexion
             // 
-            this.bConnexion.BackColor = System.Drawing.Color.Pink;
-            this.bConnexion.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.bConnexion.BackColor = color1;
+            this.bConnexion.ForeColor = color2;
             this.bConnexion.Location = new System.Drawing.Point(296, 127);
             this.bConnexion.Name = "bConnexion";
             this.bConnexion.Size = new System.Drawing.Size(158, 37);

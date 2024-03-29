@@ -3,6 +3,7 @@ using NpgsqlTypes;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Windows.Forms;
 using _2SIO_FSI_Adminstration.Classe;
 using _2SIO_FSI_Adminstration.DAO;
@@ -13,9 +14,11 @@ namespace _2SIO_FSI_Adminstration.WinForm
     {
         private DAOEtudiant etudiantDAO;
 
-        public AjoutEtudiant()
+        private Utilisateur x;
+        public AjoutEtudiant(Utilisateur utiConnecte)
         {
             InitializeComponent();
+            x = utiConnecte;
             etudiantDAO = new DAOEtudiant();
             InitializeComboBox();
         }
@@ -41,7 +44,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             };
         }
 
-        private void bouton1_Click(object sender, EventArgs e)
+        private void bouton3_Click(object sender, EventArgs e)
         {
             string nom = tbAENom.Text;
             string prenom = tbAEPrenom.Text;
@@ -75,14 +78,34 @@ namespace _2SIO_FSI_Adminstration.WinForm
     
         
 
-        private void bouton2_Click(object sender, EventArgs e)
+        private void bouton1_Click(object sender, EventArgs e)
         {
             reInitialisation();
         }
 
-        private void bouton3_Click(object sender, EventArgs e)
+        private void bouton2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Form formAccueil = new Accueil(x);
+            formAccueil.Show();
+        }
+        
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            // Confirmer que utilisateur veut fermer
+            switch (MessageBox.Show(this, "Vous êtes sur?", "Fermer en cours", MessageBoxButtons.YesNo))
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    Process.GetCurrentProcess().Kill();
+                    break;
+            }        
         }
     }
 }
