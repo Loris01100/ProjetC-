@@ -14,6 +14,7 @@ namespace _2SIO_FSI_Adminstration.DAO
                 using (var commande = new NpgsqlCommand(requete, connexion))
                 {
                     commande.Parameters.AddWithValue("libelleSection", newLib);
+                    commande.Parameters.AddWithValue("idSection", idSection);
 
                     commande.ExecuteNonQuery();
                 }
@@ -36,7 +37,7 @@ namespace _2SIO_FSI_Adminstration.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Erreur lors de la suppression de l'étudiant", ex);
+                throw new Exception("Erreur lors de la suppression de la section", ex);
             }
         }
     }

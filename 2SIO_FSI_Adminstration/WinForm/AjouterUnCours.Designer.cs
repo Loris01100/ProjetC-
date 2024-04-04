@@ -1,34 +1,37 @@
-﻿namespace _2SIO_FSI_Adminstration
+﻿using System.ComponentModel;
+
+namespace _2SIO_FSI_Adminstration.WinForm
 {
-    partial class Accueil
+    partial class AjouterUnCours
     {
         /// <summary>
-        /// Variable nécessaire au concepteur.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        /// Nettoyage des ressources utilisées.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true si les ressources managées doivent être supprimées ; sinon, false.</param>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
-        #region Code généré par le Concepteur Windows Form
+        #region Windows Form Designer generated code
 
         /// <summary>
-        /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-        /// le contenu de cette méthode avec l'éditeur de code.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accueil));
+           System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accueil));
             this.PanelMenu = new System.Windows.Forms.Panel();
             this.msGlobal = new System.Windows.Forms.MenuStrip();
             this.accueilToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -277,13 +280,12 @@
             this.PanelInterieur.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
         private System.Windows.Forms.Panel PanelMenu;
         private System.Windows.Forms.MenuStrip msGlobal;
-  //      private System.Windows.Forms.Panel panel2;
+        //      private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripMenuItem accueilToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem gestionEtudiantToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem gestionSectionToolStripMenuItem1;
@@ -294,10 +296,10 @@
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.Panel PanelQuitter;
-   //     private System.Windows.Forms.Button bDeConnexion;
+        //     private System.Windows.Forms.Button bDeConnexion;
         private System.Windows.Forms.Panel PanelInterieur;
-    //    private System.Windows.Forms.Label lTexteBienvenue;
-   //     private System.Windows.Forms.Label lBienvenue;
+        //    private System.Windows.Forms.Label lTexteBienvenue;
+        //     private System.Windows.Forms.Label lBienvenue;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lBien;
         private System.Windows.Forms.Button bQuitter;
@@ -309,4 +311,3 @@
         private System.Windows.Forms.TextBox tbUserConnecte;
     }
 }
-

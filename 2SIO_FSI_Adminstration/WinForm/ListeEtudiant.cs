@@ -30,8 +30,9 @@ namespace _2SIO_FSI_Adminstration.WinForm
                         int idEtudiant = dr.GetInt32(0);
                         string nomEtudiant = dr.GetString(1);
                         string prenomEtudiant = dr.GetString(2);
+                        string adresse = dr.GetString(3);
 
-                        Etudiant unEtudiant = new Etudiant(idEtudiant, nomEtudiant, prenomEtudiant);
+                        Etudiant unEtudiant = new Etudiant(idEtudiant, nomEtudiant, prenomEtudiant, adresse);
                         mesEtudiants.Add(unEtudiant);
                     }
 
@@ -75,6 +76,12 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             Form formAccueil = new Accueil(x);
             formAccueil.Show();
+        }
+        private void listeDesSectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formListeSection = new ListeSection(x);
+            formListeSection.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)

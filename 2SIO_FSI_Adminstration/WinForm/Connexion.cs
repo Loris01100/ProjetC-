@@ -16,6 +16,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
 {
     public partial class Connexion : Form
     {
+        Utilisateur uti;
         public Connexion()
         {
             InitializeComponent();

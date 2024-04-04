@@ -1,37 +1,63 @@
-﻿using _2SIO_FSI_Adminstration.Classe;
-using _2SIO_FSI_Adminstration.WinForm;
-using System;
+﻿using System;
+using _2SIO_FSI_Adminstration.Classe;
+using Npgsql;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using _2SIO_FSI_Adminstration.DAO;
-using Npgsql;
 
-namespace _2SIO_FSI_Adminstration
+namespace _2SIO_FSI_Adminstration.WinForm
 {
-    public partial class Accueil : Form
+    public partial class ListeSection : Form
     {
         Utilisateur uti;
-        public Accueil(Utilisateur utiConnecte)
+        
+        public ListeSection(Utilisateur utiConnecte)
         {
-           
             InitializeComponent();
             uti = utiConnecte;
-            Form formConnexion = new Connexion();
-            formConnexion.Close();
-            tbUserConnecte.Text = uti.LoginUtilisateur;
-        }
 
+            // Utilisation de ConnexionSQL.Instance pour la connexion
+            using (var MyCnx = ConnexionSQL.Instance)
+            {
+                string select = "SELECT * FROM section";
+                using (var MyCmd = new NpgsqlCommand(select, MyCnx))
+                using (var dr = MyCmd.ExecuteReader())
+                {
+                    List<Section> mesSections = new List<Section>();
+                    while (dr.Read())
+                    {
+                        int idSection = dr.GetInt32(0);
+                        string libelleSection = dr.GetString(1);
+
+                        Section uneSection = new Section(idSection, libelleSection);
+                        mesSections.Add(uneSection);
+                    }
+
+                    // Affichage dans le dataGridView
+                    foreach (Section sec in mesSections)
+                    {
+                        dgvSections.Rows.Add(sec.LibelleSection);
+                    }
+                }
+            }
+        }
         private void bQuitter_Click(object sender, EventArgs e)
         {
-                Application.Exit();
+            Application.Exit();
+        }
 
+        private void bFermer_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAccueil = new Accueil(uti);
+            formAccueil.Show();
+        }
+        private void accueilToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAccueil = new Accueil(uti);
+            formAccueil.Show();
         }
 
         private void listeDesEtudiantsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,7 +109,6 @@ namespace _2SIO_FSI_Adminstration
             Form formGetCours = new getCours(uti);
             formGetCours.Show();
         }
-        
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
@@ -97,12 +122,9 @@ namespace _2SIO_FSI_Adminstration
                     e.Cancel = true;
                     break;
                 default:
-                {
                     Process.GetCurrentProcess().Kill();
                     break;
-                }
             }        
         }
-
     }
 }
