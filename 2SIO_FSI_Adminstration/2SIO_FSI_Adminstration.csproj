@@ -91,9 +91,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classe\Cours.cs" />
     <Compile Include="Classe\Etudiant.cs" />
     <Compile Include="Classe\Section.cs" />
     <Compile Include="DAO\ConnexionSQL.cs" />
+    <Compile Include="DAO\DAOCours.cs" />
     <Compile Include="DAO\DAOEtudiant.cs" />
     <Compile Include="DAO\DAOSection.cs" />
     <Compile Include="DAO\DAOUtilisateur.cs" />
@@ -107,6 +109,12 @@
     <Compile Include="Classe\Utilisateur.cs" />
     <Compile Include="FSI.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WinForm\AjouterUnCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\AjouterUnCours.Designer.cs">
+      <DependentUpon>AjouterUnCours.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForm\AjoutEtudiant.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,11 +127,41 @@
     <Compile Include="WinForm\Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\getCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\getCours.Designer.cs">
+      <DependentUpon>getCours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\ListeCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\ListeCours.Designer.cs">
+      <DependentUpon>ListeCours.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForm\ListeEtudiant.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WinForm\ListeEtudiant.Designer.cs">
       <DependentUpon>ListeEtudiant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\ListeSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\ListeSection.Designer.cs">
+      <DependentUpon>ListeSection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\updateDeleteCours.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\updateDeleteCours.Designer.cs">
+      <DependentUpon>updateDeleteCours.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\updateDeleteSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\updateDeleteSection.Designer.cs">
+      <DependentUpon>updateDeleteSection.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="WinForm\Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
