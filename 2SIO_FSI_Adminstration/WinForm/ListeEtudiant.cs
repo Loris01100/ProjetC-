@@ -30,7 +30,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
                         int idEtudiant = dr.GetInt32(0);
                         string nomEtudiant = dr.GetString(1);
                         string prenomEtudiant = dr.GetString(2);
-                        string adresse = dr.GetString(3);
+                        string adresse = dr.GetString(4);
 
                         Etudiant unEtudiant = new Etudiant(idEtudiant, nomEtudiant, prenomEtudiant, adresse);
                         mesEtudiants.Add(unEtudiant);
@@ -39,7 +39,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
                     // Affichage dans le dataGridView
                     foreach (Etudiant etu in mesEtudiants)
                     {
-                        dgvEtudiants.Rows.Add(etu.NomEtudiant, etu.PrenomEtudiant);
+                        dgvEtudiants.Rows.Add(etu.NomEtudiant, etu.PrenomEtudiant, etu.Adresse);
                     }
                 }
             }

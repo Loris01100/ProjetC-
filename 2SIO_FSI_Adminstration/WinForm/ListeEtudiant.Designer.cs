@@ -50,6 +50,7 @@
             this.dgvEtudiants = new System.Windows.Forms.DataGridView();
             this.nomEtudiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.prenomEtudiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.adresse = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgvListeEtudiant = new System.Windows.Forms.DataGridView();
             this.bFermer = new System.Windows.Forms.Button();
             this.PanelLogo.SuspendLayout();
@@ -184,7 +185,9 @@
             this.dgvEtudiants.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEtudiants.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nomEtudiant,
-            this.prenomEtudiant});
+            this.prenomEtudiant,
+            this.adresse
+            });
             this.dgvEtudiants.Location = new System.Drawing.Point(0, 3);
             this.dgvEtudiants.MultiSelect = false;
             this.dgvEtudiants.Name = "dgvEtudiants";
@@ -208,6 +211,14 @@
             this.prenomEtudiant.Name = "prenomEtudiant";
             this.prenomEtudiant.ReadOnly = true;
             this.prenomEtudiant.Width = 134;
+            // 
+            // adresse
+            // 
+            this.adresse.HeaderText = "adresse";
+            this.adresse.MinimumWidth = 6;
+            this.adresse.Name = "adresse";
+            this.adresse.ReadOnly = true;
+            this.adresse.Width = 200;
             // 
             // dgvListeEtudiant
             // 
@@ -292,5 +303,6 @@
         private System.Windows.Forms.DataGridView dgvEtudiants;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomEtudiant;
         private System.Windows.Forms.DataGridViewTextBoxColumn prenomEtudiant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn adresse;
     }
 }

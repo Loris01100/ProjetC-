@@ -94,7 +94,8 @@ namespace _2SIO_FSI_Adminstration.DAO
                             {
                                 IdEtudiant = dr.GetInt32(0),
                                 NomEtudiant = dr.GetString(1),
-                                PrenomEtudiant = dr.GetString(2)
+                                PrenomEtudiant = dr.GetString(2),
+                                Adresse = dr.GetString(4)
                             };
                             etudiants.Add(etudiant);
                         }
@@ -130,7 +131,8 @@ namespace _2SIO_FSI_Adminstration.DAO
                                 {
                                     IdEtudiant = dr.GetInt32(0),
                                     NomEtudiant = dr.GetString(1),
-                                    PrenomEtudiant = dr.GetString(2)
+                                    PrenomEtudiant = dr.GetString(2),
+                                    Adresse = dr.GetString(4)
                                     
                                 };
                             }
