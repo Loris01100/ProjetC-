@@ -38,33 +38,38 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(216, 145);
+            this.txtNom.Location = new System.Drawing.Point(351, 236);
+            this.txtNom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(100, 22);
+            this.txtNom.Size = new System.Drawing.Size(160, 34);
             this.txtNom.TabIndex = 0;
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Location = new System.Drawing.Point(216, 173);
+            this.txtPrenom.Location = new System.Drawing.Point(351, 281);
+            this.txtPrenom.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(100, 22);
+            this.txtPrenom.Size = new System.Drawing.Size(160, 34);
             this.txtPrenom.TabIndex = 1;
             // 
             // txtAdresse
             // 
-            this.txtAdresse.Location = new System.Drawing.Point(216, 201);
+            this.txtAdresse.Location = new System.Drawing.Point(351, 327);
+            this.txtAdresse.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtAdresse.Name = "txtAdresse";
-            this.txtAdresse.Size = new System.Drawing.Size(100, 22);
+            this.txtAdresse.Size = new System.Drawing.Size(160, 34);
             this.txtAdresse.TabIndex = 2;
             // 
             // ConsulterEtudiant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1300, 731);
             this.Controls.Add(this.txtAdresse);
             this.Controls.Add(this.txtPrenom);
             this.Controls.Add(this.txtNom);
+            this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.Name = "ConsulterEtudiant";
             this.Text = "ConsulterEtudiant";
             this.ResumeLayout(false);
