@@ -10,18 +10,16 @@ namespace _2SIO_FSI_Adminstration.Classe
     {
         private int idUtilisateur;
         private string loginUtilisateur;
-        private string mdpUtilisateur;
 
-        public Utilisateur(int idUtilisateur, string loginUtilisateur, string mdpUtilisateur)
+        public Utilisateur(int idUtilisateur, string loginUtilisateur)
         {
             this.idUtilisateur = idUtilisateur;
             this.loginUtilisateur = loginUtilisateur;
-            this.mdpUtilisateur = mdpUtilisateur;
         }
 
         public int IdUtilisateur { get => idUtilisateur; set => idUtilisateur = value; }
         public string LoginUtilisateur { get => loginUtilisateur; set => loginUtilisateur = value; }
-        public string MdpUtilisateur { get => mdpUtilisateur; set => mdpUtilisateur = value; }
+        
     }
 }
 

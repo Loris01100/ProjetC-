@@ -28,36 +28,18 @@ namespace _2SIO_FSI_Adminstration.WinForm
             string loginUti = tbLogin.Text;
             string mdpUti = tbMdp.Text;
 
-            using (var myCnx = ConnexionSQL.Instance)
+            Utilisateur uti = DAOUtilisateur.Authentifier(loginUti, mdpUti);
+            if (uti != null)
             {
-                string select = "SELECT * FROM utilisateur WHERE loginutilisateur = :login AND mdputilisateur = :mdp;";
-                using (var myCmd = new NpgsqlCommand(select, myCnx))
-                {
-                    myCmd.Parameters.Add(new NpgsqlParameter("login", NpgsqlDbType.Varchar)).Value = loginUti;
-                    myCmd.Parameters.Add(new NpgsqlParameter("mdp", NpgsqlDbType.Varchar)).Value = mdpUti; // Assurez-vous que mdpUti est hashé si nécessaire
-
-                    using (var dr = myCmd.ExecuteReader())
-                    {
-                        if (dr.Read())
-                        {
-                            // Traitement si l'utilisateur est trouvé
-                            int idUti = dr.GetInt32(0);
-                            loginUti = dr.GetString(1);
-                            mdpUti = dr.GetString(2);
-                            Utilisateur uti = new Utilisateur(idUti, loginUti, mdpUti);
-
-                            this.Hide();
-                            Form formAccueil = new Accueil(uti);
-                            formAccueil.Show();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Erreur d'authentification");
-                            tbLogin.Text = "";
-                            tbMdp.Text = "";
-                        }
-                    }
-                }
+                this.Hide();
+                Form formAccueil = new Accueil(uti);
+                formAccueil.Show();
+            }
+            else
+            {
+                MessageBox.Show("Erreur d'authentification");
+                tbLogin.Text = "";
+                tbMdp.Text = "";
             }
         }
     }
