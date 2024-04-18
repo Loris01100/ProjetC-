@@ -10,61 +10,38 @@ using _2SIO_FSI_Adminstration.DAO;
 
 namespace _2SIO_FSI_Adminstration.WinForm
 {
-    public partial class AjoutEtudiant : Form
+    public partial class AjoutSection : Form
     {
-        private DAOEtudiant etudiantDAO;
+        private DAOSection sectionDAO;
 
         private Utilisateur x;
-        public AjoutEtudiant(Utilisateur utiConnecte)
+        public AjoutSection(Utilisateur utiConnecte)
         {
             InitializeComponent();
             x = utiConnecte;
-            etudiantDAO = new DAOEtudiant();
-            RemplirComboBoxSections();
+            sectionDAO = new DAOSection();
         }
         
-        private void RemplirComboBoxSections()
+        private void boutonAjouter_Click(object sender, EventArgs e)
         {
-            DAOSection dao = new DAOSection();
-            List<Section> mesSections = dao.GetAll();
+            string libelle = tbAELibelle.Text;
 
-            cbSection.DisplayMember = "LibelleSection";
-            cbSection.ValueMember = "IdSection";
-            cbSection.DataSource = mesSections;
-        }
-
-        private void boutonEnregistrer_Click(object sender, EventArgs e)
-        {
-            string nom = tbAENom.Text;
-            string prenom = tbAEPrenom.Text;
-            Section section = cbSection.SelectedItem as Section;
-            string adresse = tbAEAdresse.Text;
-
-            if (section == null)
-            {
-                MessageBox.Show("Veuillez sélectionner une section.");
-                return;
-            }
-
-            bool ajoutReussi = DAOEtudiant.InsertEtudiant(nom, prenom, section, adresse);
+            bool ajoutReussi = DAOSection.InsertSection(libelle);
 
             if (ajoutReussi)
             {
-                MessageBox.Show("Étudiant ajouté avec succès.");
+                MessageBox.Show("Section ajouté avec succès.");
                 reInitialisation();
             }
             else
             {
-                MessageBox.Show("Erreur lors de l'ajout de l'étudiant. Assurez-vous que tous les champs sont remplis.");
+                MessageBox.Show("Erreur lors de l'ajout de la section. Assurez-vous que tous les champs sont remplis.");
             }
         }
 
         private void reInitialisation()
         {
-            tbAENom.Clear();
-            tbAEPrenom.Clear();
-            tbAEAdresse.Clear();
-            cbSection.SelectedIndex = -1;
+            tbAELibelle.Clear();
         }
     
         

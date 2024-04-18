@@ -38,7 +38,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.gestionSectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDesSectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteSectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ajouterUnEtudiantToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionCoursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDesCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();

@@ -18,11 +18,11 @@ namespace _2SIO_FSI_Adminstration.WinForm
             uti = utiConnecte;
 
             // Utilisation de ConnexionSQL.Instance pour la connexion
-            using (var MyCnx = ConnexionSQL.Instance)
+            using (var myCnx = ConnexionSQL.Instance)
             {
                 string select = "SELECT * FROM section";
-                using (var MyCmd = new NpgsqlCommand(select, MyCnx))
-                using (var dr = MyCmd.ExecuteReader())
+                using (var myCmd = new NpgsqlCommand(select, myCnx))
+                using (var dr = myCmd.ExecuteReader())
                 {
                     List<Section> mesSections = new List<Section>();
                     while (dr.Read())

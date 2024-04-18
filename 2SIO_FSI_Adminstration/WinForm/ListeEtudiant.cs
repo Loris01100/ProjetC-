@@ -11,38 +11,41 @@ namespace _2SIO_FSI_Adminstration.WinForm
     public partial class ListeEtudiant : Form
     {
         Utilisateur x;
-        
+       
+
         public ListeEtudiant(Utilisateur utiConnecte)
         {
             InitializeComponent();
             x = utiConnecte;
+            dgvEtudiants.CellDoubleClick += dgvEtudiants_CellDoubleClick;
 
-            // Utilisation de ConnexionSQL.Instance pour la connexion
-            using (var MyCnx = ConnexionSQL.Instance)
+            DAOEtudiant dao = new DAOEtudiant();
+            List<Etudiant> mesEtudiants = dao.GetAll();
+            
+            dgvEtudiants.Rows.Clear();
+            foreach (Etudiant etu in mesEtudiants)
             {
-                string select = "SELECT * FROM etudiant";
-                using (var MyCmd = new NpgsqlCommand(select, MyCnx))
-                using (var dr = MyCmd.ExecuteReader())
-                {
-                    List<Etudiant> mesEtudiants = new List<Etudiant>();
-                    while (dr.Read())
-                    {
-                        int idEtudiant = dr.GetInt32(0);
-                        string nomEtudiant = dr.GetString(1);
-                        string prenomEtudiant = dr.GetString(2);
-                        string adresse = dr.GetString(4);
-
-                        Etudiant unEtudiant = new Etudiant(idEtudiant, nomEtudiant, prenomEtudiant, adresse);
-                        mesEtudiants.Add(unEtudiant);
-                    }
-
-                    // Affichage dans le dataGridView
-                    foreach (Etudiant etu in mesEtudiants)
-                    {
-                        dgvEtudiants.Rows.Add(etu.NomEtudiant, etu.PrenomEtudiant, etu.Adresse);
-                    }
-                }
+                int index = dgvEtudiants.Rows.Add();
+                dgvEtudiants.Rows[index].Cells["NomEtudiant"].Value = etu.NomEtudiant;
+                dgvEtudiants.Rows[index].Cells["PrenomEtudiant"].Value = etu.PrenomEtudiant;
+                dgvEtudiants.Rows[index].Cells["LibelleSection"].Value = etu.IdSection.LibelleSection;
+                dgvEtudiants.Rows[index].Tag = etu.IdEtudiant;
             }
+        }
+        private void dgvEtudiants_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int etudiantId = (int)dgvEtudiants.Rows[e.RowIndex].Tag;
+                ConsulterEtudiant(etudiantId);
+            }
+        }
+        
+        private void ConsulterEtudiant(int etudiantId)
+        {
+            this.Hide();
+            Form formConsulterEtudiant = new ConsulterEtudiant();
+            formConsulterEtudiant.Show();
         }
 
         private void bQuitter_Click(object sender, EventArgs e)

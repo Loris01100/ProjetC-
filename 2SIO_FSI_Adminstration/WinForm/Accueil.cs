@@ -59,6 +59,12 @@ namespace _2SIO_FSI_Adminstration
             Form formUpdateDeleteSection = new updateDeleteSection(uti);
             formUpdateDeleteSection.Show();
         }
+        private void ajouterSectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAjoutSection = new AjoutSection(uti);
+            formAjoutSection.Show();
+        }
         private void ListeCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();

@@ -28,15 +28,15 @@ namespace _2SIO_FSI_Adminstration.WinForm
             string loginUti = tbLogin.Text;
             string mdpUti = tbMdp.Text;
 
-            using (var MyCnx = ConnexionSQL.Instance)
+            using (var myCnx = ConnexionSQL.Instance)
             {
                 string select = "SELECT * FROM utilisateur WHERE loginutilisateur = :login AND mdputilisateur = :mdp;";
-                using (var MyCmd = new NpgsqlCommand(select, MyCnx))
+                using (var myCmd = new NpgsqlCommand(select, myCnx))
                 {
-                    MyCmd.Parameters.Add(new NpgsqlParameter("login", NpgsqlDbType.Varchar)).Value = loginUti;
-                    MyCmd.Parameters.Add(new NpgsqlParameter("mdp", NpgsqlDbType.Varchar)).Value = mdpUti; // Assurez-vous que mdpUti est hashé si nécessaire
+                    myCmd.Parameters.Add(new NpgsqlParameter("login", NpgsqlDbType.Varchar)).Value = loginUti;
+                    myCmd.Parameters.Add(new NpgsqlParameter("mdp", NpgsqlDbType.Varchar)).Value = mdpUti; // Assurez-vous que mdpUti est hashé si nécessaire
 
-                    using (var dr = MyCmd.ExecuteReader())
+                    using (var dr = myCmd.ExecuteReader())
                     {
                         if (dr.Read())
                         {

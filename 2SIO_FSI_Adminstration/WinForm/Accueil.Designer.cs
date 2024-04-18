@@ -23,8 +23,8 @@
         #region Code généré par le Concepteur Windows Form
 
         /// <summary>
-        /// Méthode requise pour la prise en charge du concepteur - ne modifiez pas
-        /// le contenu de cette méthode avec l'éditeur de code.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -38,6 +38,7 @@
             this.gestionSectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDesSectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteSectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterSectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionCoursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDesCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,11 +71,7 @@
             // msGlobal
             // 
             this.msGlobal.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.msGlobal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.accueilToolStripMenuItem2,
-            this.gestionEtudiantToolStripMenuItem1,
-            this.gestionSectionToolStripMenuItem1,
-            this.gestionCoursToolStripMenuItem1});
+            this.msGlobal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.accueilToolStripMenuItem2, this.gestionEtudiantToolStripMenuItem1, this.gestionSectionToolStripMenuItem1, this.gestionCoursToolStripMenuItem1 });
             this.msGlobal.Location = new System.Drawing.Point(0, 0);
             this.msGlobal.Name = "msGlobal";
             this.msGlobal.Size = new System.Drawing.Size(806, 28);
@@ -84,93 +81,90 @@
             // accueilToolStripMenuItem2
             // 
             this.accueilToolStripMenuItem2.Name = "accueilToolStripMenuItem2";
-            this.accueilToolStripMenuItem2.Size = new System.Drawing.Size(71, 24);
+            this.accueilToolStripMenuItem2.Size = new System.Drawing.Size(69, 24);
             this.accueilToolStripMenuItem2.Text = "Accueil";
             // 
             // gestionEtudiantToolStripMenuItem1
             // 
-            this.gestionEtudiantToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.listeDesEtudiantsToolStripMenuItem,
-            this.ajouterUnEtudiantToolStripMenuItem});
+            this.gestionEtudiantToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.listeDesEtudiantsToolStripMenuItem, this.ajouterUnEtudiantToolStripMenuItem });
             this.gestionEtudiantToolStripMenuItem1.Name = "gestionEtudiantToolStripMenuItem1";
-            this.gestionEtudiantToolStripMenuItem1.Size = new System.Drawing.Size(132, 24);
+            this.gestionEtudiantToolStripMenuItem1.Size = new System.Drawing.Size(130, 24);
             this.gestionEtudiantToolStripMenuItem1.Text = "Gestion Etudiant";
             // 
             // listeDesEtudiantsToolStripMenuItem
             // 
             this.listeDesEtudiantsToolStripMenuItem.Name = "listeDesEtudiantsToolStripMenuItem";
-            this.listeDesEtudiantsToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.listeDesEtudiantsToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.listeDesEtudiantsToolStripMenuItem.Text = "Liste des étudiants";
             this.listeDesEtudiantsToolStripMenuItem.Click += new System.EventHandler(this.listeDesEtudiantsToolStripMenuItem_Click);
             // 
             // ajouterUnEtudiantToolStripMenuItem
             // 
             this.ajouterUnEtudiantToolStripMenuItem.Name = "ajouterUnEtudiantToolStripMenuItem";
-            this.ajouterUnEtudiantToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.ajouterUnEtudiantToolStripMenuItem.Size = new System.Drawing.Size(206, 24);
             this.ajouterUnEtudiantToolStripMenuItem.Text = "Ajouter un étudiant";
             this.ajouterUnEtudiantToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnEtudiantToolStripMenuItem_Click);
-            //
-            // gestionSectionToolStripMenuItem
-            //
-            this.gestionSectionToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.listeDesSectionsToolStripMenuItem,
-                this.updateDeleteSectionToolStripMenuItem
-               });
+            // 
+            // gestionSectionToolStripMenuItem1
+            // 
+            this.gestionSectionToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.listeDesSectionsToolStripMenuItem, this.updateDeleteSectionToolStripMenuItem, this.ajouterSectionsToolStripMenuItem });
             this.gestionSectionToolStripMenuItem1.Name = "gestionSectionToolStripMenuItem1";
-            this.gestionSectionToolStripMenuItem1.Size = new System.Drawing.Size(132, 24);
+            this.gestionSectionToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.gestionSectionToolStripMenuItem1.Text = "Gestion Section";
-            //
+            // 
             // listeDesSectionsToolStripMenuItem
-            //
+            // 
             this.listeDesSectionsToolStripMenuItem.Name = "listeDesSectionsToolStripMenuItem";
-            this.listeDesSectionsToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.listeDesSectionsToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
             this.listeDesSectionsToolStripMenuItem.Text = "Liste des sections";
             this.listeDesSectionsToolStripMenuItem.Click += new System.EventHandler(this.listeDesSectionsToolStripMenuItem_Click);
-            //
-            // updateDeleteSectionsToolStripMenuItem
-            //
-            this.updateDeleteSectionToolStripMenuItem.Name = "listeDesSectionsToolStripMenuItem";
-            this.updateDeleteSectionToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            // 
+            // updateDeleteSectionToolStripMenuItem
+            // 
+            this.updateDeleteSectionToolStripMenuItem.Name = "updateDeleteSectionToolStripMenuItem";
+            this.updateDeleteSectionToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
             this.updateDeleteSectionToolStripMenuItem.Text = "Modification des sections";
             this.updateDeleteSectionToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteSectionToolStripMenuItem_Click);
-            //
-            // gestionCoursToolStripMenuItem
-            //
-            this.gestionCoursToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-                this.listeDesCoursToolStripMenuItem,
-                this.ajouterUnCoursToolStripMenuItem,
-                this.updateDeleteCoursToolStripMenuItem,
-                this.getCoursToolStripMenuItem
-            });
+            // 
+            // ajouterSectionsToolStripMenuItem
+            // 
+            this.ajouterSectionsToolStripMenuItem.Name = "ajouterSectionsToolStripMenuItem";
+            this.ajouterSectionsToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
+            this.ajouterSectionsToolStripMenuItem.Text = "Ajout d\'une section";
+            this.ajouterSectionsToolStripMenuItem.Click += new System.EventHandler(this.ajouterSectionsToolStripMenuItem_Click);
+            // 
+            // gestionCoursToolStripMenuItem1
+            // 
+            this.gestionCoursToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.listeDesCoursToolStripMenuItem, this.ajouterUnCoursToolStripMenuItem, this.updateDeleteCoursToolStripMenuItem, this.getCoursToolStripMenuItem });
             this.gestionCoursToolStripMenuItem1.Name = "gestionCoursToolStripMenuItem1";
-            this.gestionCoursToolStripMenuItem1.Size = new System.Drawing.Size(132, 24);
+            this.gestionCoursToolStripMenuItem1.Size = new System.Drawing.Size(110, 24);
             this.gestionCoursToolStripMenuItem1.Text = "Gestion cours";
-            //
-            // ListeCoursToolStripMenuItem
-            //
-            this.listeDesCoursToolStripMenuItem.Name = "listeDesSectionsToolStripMenuItem";
-            this.listeDesCoursToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            // 
+            // listeDesCoursToolStripMenuItem
+            // 
+            this.listeDesCoursToolStripMenuItem.Name = "listeDesCoursToolStripMenuItem";
+            this.listeDesCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.listeDesCoursToolStripMenuItem.Text = "Liste des cours";
             this.listeDesCoursToolStripMenuItem.Click += new System.EventHandler(this.ListeCoursToolStripMenuItem_Click);
-            //
+            // 
             // ajouterUnCoursToolStripMenuItem
-            //
+            // 
             this.ajouterUnCoursToolStripMenuItem.Name = "ajouterUnCoursToolStripMenuItem";
-            this.ajouterUnCoursToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.ajouterUnCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.ajouterUnCoursToolStripMenuItem.Text = "Ajouter des cours";
             this.ajouterUnCoursToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnCoursToolStripMenuItem_Click);
-            //
+            // 
             // updateDeleteCoursToolStripMenuItem
-            //
+            // 
             this.updateDeleteCoursToolStripMenuItem.Name = "updateDeleteCoursToolStripMenuItem";
-            this.updateDeleteCoursToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.updateDeleteCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.updateDeleteCoursToolStripMenuItem.Text = "Modification des cours";
             this.updateDeleteCoursToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteCoursToolStripMenuItem_Click);
-            //
+            // 
             // getCoursToolStripMenuItem
-            //
+            // 
             this.getCoursToolStripMenuItem.Name = "getCoursToolStripMenuItem";
-            this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(220, 26);
+            this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.getCoursToolStripMenuItem.Text = "Cours";
             this.getCoursToolStripMenuItem.Click += new System.EventHandler(this.getCoursToolStripMenuItem_Click);
             // 
@@ -243,6 +237,7 @@
             // tbUserConnecte
             // 
             this.tbUserConnecte.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbUserConnecte.Enabled = false;
             this.tbUserConnecte.ForeColor = System.Drawing.Color.Blue;
             this.tbUserConnecte.Location = new System.Drawing.Point(909, 68);
             this.tbUserConnecte.Name = "tbUserConnecte";
@@ -251,8 +246,8 @@
             // 
             // Accueil
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1024, 529);
             this.Controls.Add(this.tbUserConnecte);
@@ -277,7 +272,6 @@
             this.PanelInterieur.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
@@ -306,6 +300,7 @@
         private System.Windows.Forms.ToolStripMenuItem ajouterUnCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getCoursToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ajouterSectionsToolStripMenuItem;
         private System.Windows.Forms.TextBox tbUserConnecte;
     }
 }

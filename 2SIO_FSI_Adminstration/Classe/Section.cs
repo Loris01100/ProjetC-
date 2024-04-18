@@ -10,7 +10,11 @@
             this.idSection = idSection;
             this.libelleSection = libelleSection;
         }
-        
+
+        public Section()
+        {
+        }
+
         public int IdSection { get => idSection; set => idSection = value; }
         public string LibelleSection { get => libelleSection; set => libelleSection = value; }
         

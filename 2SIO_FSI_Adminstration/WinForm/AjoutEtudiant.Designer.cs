@@ -34,11 +34,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbAENom = new System.Windows.Forms.TextBox();
             this.tbAEPrenom = new System.Windows.Forms.TextBox();
-            this.bouton1 = new System.Windows.Forms.Button();
-            this.bouton2 = new System.Windows.Forms.Button();
+            this.boutonEffacer = new System.Windows.Forms.Button();
+            this.boutonEnregistrer = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.bouton3 = new System.Windows.Forms.Button();
-            this.cbClasse = new System.Windows.Forms.ComboBox();
+            this.boutonRetour = new System.Windows.Forms.Button();
+            this.cbSection = new System.Windows.Forms.ComboBox();
+            this.tbAEAdresse = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,9 +48,9 @@
             // 
             this.lNom.AutoSize = true;
             this.lNom.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lNom.Location = new System.Drawing.Point(42, 54);
+            this.lNom.Location = new System.Drawing.Point(308, 69);
             this.lNom.Name = "lNom";
-            this.lNom.Size = new System.Drawing.Size(56, 25);
+            this.lNom.Size = new System.Drawing.Size(70, 31);
             this.lNom.TabIndex = 0;
             this.lNom.Text = "Nom";
             // 
@@ -56,9 +58,9 @@
             // 
             this.lPrenom.AutoSize = true;
             this.lPrenom.ForeColor = System.Drawing.Color.DarkGreen;
-            this.lPrenom.Location = new System.Drawing.Point(13, 114);
+            this.lPrenom.Location = new System.Drawing.Point(279, 129);
             this.lPrenom.Name = "lPrenom";
-            this.lPrenom.Size = new System.Drawing.Size(85, 25);
+            this.lPrenom.Size = new System.Drawing.Size(105, 31);
             this.lPrenom.TabIndex = 1;
             this.lPrenom.Text = "Prénom";
             // 
@@ -66,91 +68,110 @@
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(30, 176);
+            this.label1.Location = new System.Drawing.Point(279, 191);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 25);
+            this.label1.Size = new System.Drawing.Size(103, 31);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Classe";
+            this.label1.Text = "Section";
             // 
             // tbAENom
             // 
-            this.tbAENom.Location = new System.Drawing.Point(123, 41);
+            this.tbAENom.Location = new System.Drawing.Point(392, 54);
             this.tbAENom.Name = "tbAENom";
-            this.tbAENom.Size = new System.Drawing.Size(190, 38);
+            this.tbAENom.Size = new System.Drawing.Size(190, 46);
             this.tbAENom.TabIndex = 3;
             // 
             // tbAEPrenom
             // 
-            this.tbAEPrenom.Location = new System.Drawing.Point(123, 101);
+            this.tbAEPrenom.Location = new System.Drawing.Point(392, 114);
             this.tbAEPrenom.Name = "tbAEPrenom";
-            this.tbAEPrenom.Size = new System.Drawing.Size(190, 38);
-            this.tbAEPrenom.TabIndex = 4;
+            this.tbAEPrenom.Size = new System.Drawing.Size(190, 46);
+            this.tbAEPrenom.TabIndex = 5;
             // 
-            // bouton1
+            // boutonEffacer
             // 
-            this.bouton1.BackColor = System.Drawing.Color.Honeydew;
-            this.bouton1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.bouton1.Location = new System.Drawing.Point(2, 238);
-            this.bouton1.Name = "bouton1";
-            this.bouton1.Size = new System.Drawing.Size(159, 40);
-            this.bouton1.TabIndex = 6;
-            this.bouton1.Text = "EFFACER";
-            this.bouton1.UseVisualStyleBackColor = false;
-            this.bouton1.Click += new System.EventHandler(this.bouton1_Click);
+            this.boutonEffacer.BackColor = System.Drawing.Color.Honeydew;
+            this.boutonEffacer.ForeColor = System.Drawing.Color.DarkGreen;
+            this.boutonEffacer.Location = new System.Drawing.Point(561, 330);
+            this.boutonEffacer.Name = "boutonEffacer";
+            this.boutonEffacer.Size = new System.Drawing.Size(159, 40);
+            this.boutonEffacer.TabIndex = 6;
+            this.boutonEffacer.Text = "EFFACER";
+            this.boutonEffacer.UseVisualStyleBackColor = false;
+            this.boutonEffacer.Click += new System.EventHandler(this.boutonEffacer_Click);
             // 
-            // bouton2
+            // boutonEnregistrer
             // 
-            this.bouton2.BackColor = System.Drawing.Color.Honeydew;
-            this.bouton2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.bouton2.Location = new System.Drawing.Point(167, 238);
-            this.bouton2.Name = "bouton2";
-            this.bouton2.Size = new System.Drawing.Size(164, 40);
-            this.bouton2.TabIndex = 7;
-            this.bouton2.Text = "ENREGISTRER";
-            this.bouton2.UseVisualStyleBackColor = false;
-            this.bouton2.Click += new System.EventHandler(this.bouton3_Click);
+            this.boutonEnregistrer.BackColor = System.Drawing.Color.Honeydew;
+            this.boutonEnregistrer.ForeColor = System.Drawing.Color.DarkGreen;
+            this.boutonEnregistrer.Location = new System.Drawing.Point(235, 330);
+            this.boutonEnregistrer.Name = "boutonEnregistrer";
+            this.boutonEnregistrer.Size = new System.Drawing.Size(211, 40);
+            this.boutonEnregistrer.TabIndex = 7;
+            this.boutonEnregistrer.Text = "ENREGISTRER";
+            this.boutonEnregistrer.UseVisualStyleBackColor = false;
+            this.boutonEnregistrer.Click += new System.EventHandler(this.boutonEnregistrer_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(46, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 98);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // bouton3
+            // boutonRetour
             // 
-            this.bouton3.BackColor = System.Drawing.Color.Honeydew;
-            this.bouton3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.bouton3.Location = new System.Drawing.Point(88, 284);
-            this.bouton3.Name = "bouton3";
-            this.bouton3.Size = new System.Drawing.Size(159, 40);
-            this.bouton3.TabIndex = 9;
-            this.bouton3.Text = "RETOUR";
-            this.bouton3.UseVisualStyleBackColor = false;
-            this.bouton3.Click += new System.EventHandler(this.bouton2_Click);
+            this.boutonRetour.BackColor = System.Drawing.Color.Honeydew;
+            this.boutonRetour.ForeColor = System.Drawing.Color.DarkGreen;
+            this.boutonRetour.Location = new System.Drawing.Point(410, 376);
+            this.boutonRetour.Name = "boutonRetour";
+            this.boutonRetour.Size = new System.Drawing.Size(159, 40);
+            this.boutonRetour.TabIndex = 9;
+            this.boutonRetour.Text = "RETOUR";
+            this.boutonRetour.UseVisualStyleBackColor = false;
+            this.boutonRetour.Click += new System.EventHandler(this.boutonRetour_Click);
             // 
-            // cbClasse
+            // cbSection
             // 
-            this.cbClasse.FormattingEnabled = true;
-            this.cbClasse.Location = new System.Drawing.Point(123, 173);
-            this.cbClasse.Name = "cbClasse";
-            this.cbClasse.Size = new System.Drawing.Size(190, 33);
-            this.cbClasse.TabIndex = 10;
+            this.cbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSection.Location = new System.Drawing.Point(392, 183);
+            this.cbSection.Name = "cbSection";
+            this.cbSection.Size = new System.Drawing.Size(190, 39);
+            this.cbSection.TabIndex = 10;
+            // 
+            // tbAEAdresse
+            // 
+            this.tbAEAdresse.Location = new System.Drawing.Point(392, 233);
+            this.tbAEAdresse.Name = "tbAEAdresse";
+            this.tbAEAdresse.Size = new System.Drawing.Size(190, 46);
+            this.tbAEAdresse.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.label2.Location = new System.Drawing.Point(281, 248);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(105, 31);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Adresse";
             // 
             // AjoutEtudiant
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(346, 393);
-            this.Controls.Add(this.cbClasse);
-            this.Controls.Add(this.bouton3);
+            this.ClientSize = new System.Drawing.Size(1013, 442);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.tbAEAdresse);
+            this.Controls.Add(this.cbSection);
+            this.Controls.Add(this.boutonRetour);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.bouton2);
-            this.Controls.Add(this.bouton1);
+            this.Controls.Add(this.boutonEnregistrer);
+            this.Controls.Add(this.boutonEffacer);
             this.Controls.Add(this.tbAEPrenom);
             this.Controls.Add(this.tbAENom);
             this.Controls.Add(this.label1);
@@ -165,8 +186,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.Label label2;
+
+        private System.Windows.Forms.TextBox tbAEAdresse;
 
         #endregion
 
@@ -175,11 +199,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbAENom;
         private System.Windows.Forms.TextBox tbAEPrenom;
-        private System.Windows.Forms.Button bouton1;
-        private System.Windows.Forms.Button bouton2;
+        private System.Windows.Forms.Button boutonEffacer;
+        private System.Windows.Forms.Button boutonEnregistrer;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button bouton3;
-        private System.Windows.Forms.ComboBox cbClasse;
+        private System.Windows.Forms.Button boutonRetour;
+        private System.Windows.Forms.ComboBox cbSection;
     //    private P2022_Appli_AdministrationDataSet1TableAdapters.classeTableAdapter classeTableAdapter;
     }
 }

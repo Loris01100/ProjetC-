@@ -121,11 +121,23 @@
     <Compile Include="WinForm\AjoutEtudiant.Designer.cs">
       <DependentUpon>AjoutEtudiant.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinForm\AjoutSection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\AjoutSection.Designer.cs">
+      <DependentUpon>AjoutSection.cs</DependentUpon>
+    </Compile>
     <Compile Include="WinForm\Connexion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WinForm\Connexion.Designer.cs">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinForm\ConsulterEtudiant.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WinForm\ConsulterEtudiant.Designer.cs">
+      <DependentUpon>ConsulterEtudiant.cs</DependentUpon>
     </Compile>
     <Compile Include="WinForm\getCours.cs">
       <SubType>Form</SubType>
@@ -178,8 +190,14 @@
     <EmbeddedResource Include="WinForm\AjoutEtudiant.resx">
       <DependentUpon>AjoutEtudiant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\AjoutSection.resx">
+      <DependentUpon>AjoutSection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinForm\Connexion.resx">
       <DependentUpon>Connexion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\ConsulterEtudiant.resx">
+      <DependentUpon>ConsulterEtudiant.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\ListeEtudiant.resx">
       <DependentUpon>ListeEtudiant.cs</DependentUpon>
