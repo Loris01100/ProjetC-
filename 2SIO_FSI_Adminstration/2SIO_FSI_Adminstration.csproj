@@ -187,6 +187,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WinForm\AjouterUnCours.resx">
+      <DependentUpon>AjouterUnCours.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinForm\AjoutEtudiant.resx">
       <DependentUpon>AjoutEtudiant.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,8 +202,23 @@
     <EmbeddedResource Include="WinForm\ConsulterEtudiant.resx">
       <DependentUpon>ConsulterEtudiant.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\getCours.resx">
+      <DependentUpon>getCours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\ListeCours.resx">
+      <DependentUpon>ListeCours.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WinForm\ListeEtudiant.resx">
       <DependentUpon>ListeEtudiant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\ListeSection.resx">
+      <DependentUpon>ListeSection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\updateDeleteCours.resx">
+      <DependentUpon>updateDeleteCours.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WinForm\updateDeleteSection.resx">
+      <DependentUpon>updateDeleteSection.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

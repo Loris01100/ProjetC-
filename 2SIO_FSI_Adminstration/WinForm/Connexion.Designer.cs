@@ -38,19 +38,14 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.bConnexion = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
             this.SuspendLayout();
-            //
-            // CouleurGlobal
-            //
-            Color color1 = ColorTranslator.FromHtml("#499c54");
-            Color color2 = ColorTranslator.FromHtml("#3c3f41");
-            Color color3 = ColorTranslator.FromHtml("#000000");
             // 
             // pbLogo
             // 
             this.pbLogo.Image = ((System.Drawing.Image)(resources.GetObject("pbLogo.Image")));
             this.pbLogo.Location = new System.Drawing.Point(0, 2);
+            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(165, 176);
+            this.pbLogo.Size = new System.Drawing.Size(154, 142);
             this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
@@ -58,45 +53,48 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // lLogin
             // 
             this.lLogin.AutoSize = true;
-            this.lLogin.ForeColor = color1;
-            this.lLogin.Location = new System.Drawing.Point(267, 33);
+            this.lLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(156)))), ((int)(((byte)(84)))));
+            this.lLogin.Location = new System.Drawing.Point(249, 27);
             this.lLogin.Name = "lLogin";
-            this.lLogin.Size = new System.Drawing.Size(63, 25);
+            this.lLogin.Size = new System.Drawing.Size(72, 26);
             this.lLogin.TabIndex = 1;
             this.lLogin.Text = "Login";
             // 
             // lMDP
             // 
             this.lMDP.AutoSize = true;
-            this.lMDP.ForeColor = color1;
-            this.lMDP.Location = new System.Drawing.Point(186, 79);
+            this.lMDP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(156)))), ((int)(((byte)(84)))));
+            this.lMDP.Location = new System.Drawing.Point(174, 64);
             this.lMDP.Name = "lMDP";
-            this.lMDP.Size = new System.Drawing.Size(144, 25);
+            this.lMDP.Size = new System.Drawing.Size(145, 26);
             this.lMDP.TabIndex = 2;
             this.lMDP.Text = "Mot de passe";
             // 
             // tbLogin
             // 
-            this.tbLogin.Location = new System.Drawing.Point(349, 20);
+            this.tbLogin.Location = new System.Drawing.Point(326, 16);
+            this.tbLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbLogin.Name = "tbLogin";
-            this.tbLogin.Size = new System.Drawing.Size(197, 38);
+            this.tbLogin.Size = new System.Drawing.Size(184, 34);
             this.tbLogin.TabIndex = 3;
             // 
             // tbMdp
             // 
-            this.tbMdp.Location = new System.Drawing.Point(349, 66);
+            this.tbMdp.Location = new System.Drawing.Point(326, 53);
+            this.tbMdp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tbMdp.Name = "tbMdp";
             this.tbMdp.PasswordChar = '*';
-            this.tbMdp.Size = new System.Drawing.Size(197, 38);
+            this.tbMdp.Size = new System.Drawing.Size(184, 34);
             this.tbMdp.TabIndex = 4;
             // 
             // bConnexion
             // 
-            this.bConnexion.BackColor = color1;
-            this.bConnexion.ForeColor = color2;
-            this.bConnexion.Location = new System.Drawing.Point(296, 127);
+            this.bConnexion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(156)))), ((int)(((byte)(84)))));
+            this.bConnexion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.bConnexion.Location = new System.Drawing.Point(276, 102);
+            this.bConnexion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bConnexion.Name = "bConnexion";
-            this.bConnexion.Size = new System.Drawing.Size(158, 37);
+            this.bConnexion.Size = new System.Drawing.Size(147, 30);
             this.bConnexion.TabIndex = 5;
             this.bConnexion.Text = "Connexion";
             this.bConnexion.UseVisualStyleBackColor = false;
@@ -104,26 +102,25 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // 
             // Connexion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(558, 176);
+            this.ClientSize = new System.Drawing.Size(521, 142);
             this.Controls.Add(this.bConnexion);
             this.Controls.Add(this.tbMdp);
             this.Controls.Add(this.tbLogin);
             this.Controls.Add(this.lMDP);
             this.Controls.Add(this.lLogin);
             this.Controls.Add(this.pbLogo);
-            this.Font = new System.Drawing.Font("MV Boli", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Blue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "Connexion";
             this.Text = "CONNEXION";
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -220,7 +220,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
             this.label1.Location = new System.Drawing.Point(138, 77);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(650, 31);
+            this.label1.Size = new System.Drawing.Size(542, 26);
             this.label1.TabIndex = 14;
             this.label1.Text = "Application de gestion administration de l\'école FSI";
             // 
@@ -230,7 +230,7 @@
             this.lBien.ForeColor = System.Drawing.Color.DarkOliveGreen;
             this.lBien.Location = new System.Drawing.Point(340, 16);
             this.lBien.Name = "lBien";
-            this.lBien.Size = new System.Drawing.Size(191, 31);
+            this.lBien.Size = new System.Drawing.Size(173, 26);
             this.lBien.TabIndex = 13;
             this.lBien.Text = "BIENVENUE !!";
             // 
@@ -241,7 +241,7 @@
             this.tbUserConnecte.ForeColor = System.Drawing.Color.Blue;
             this.tbUserConnecte.Location = new System.Drawing.Point(909, 68);
             this.tbUserConnecte.Name = "tbUserConnecte";
-            this.tbUserConnecte.Size = new System.Drawing.Size(100, 39);
+            this.tbUserConnecte.Size = new System.Drawing.Size(100, 27);
             this.tbUserConnecte.TabIndex = 12;
             // 
             // Accueil
@@ -255,7 +255,7 @@
             this.Controls.Add(this.PanelQuitter);
             this.Controls.Add(this.PanelLogo);
             this.Controls.Add(this.PanelMenu);
-            this.Font = new System.Drawing.Font("MV Boli", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Blue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(6);
