@@ -25,7 +25,7 @@ namespace _2SIO_FSI_Adminstration
             uti = utiConnecte;
             Form formConnexion = new Connexion();
             formConnexion.Close();
-            tbUserConnecte.Text = uti.LoginUtilisateur;
+            tbUserConnecte.Text = uti.NomUtilisateur;
         }
 
         private void bQuitter_Click(object sender, EventArgs e)

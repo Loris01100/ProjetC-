@@ -9,7 +9,7 @@ namespace _2SIO_FSI_Adminstration.DAO
             {
                 using (var myCnx = ConnexionSQL.Instance)
                 {
-                    string select = "SELECT idUtilisateur, loginUtilisateur FROM utilisateur WHERE loginutilisateur = @login AND mdputilisateur = @mdp";
+                    string select = "SELECT idUtilisateur, loginUtilisateur, nomUtilisateur FROM utilisateur WHERE loginutilisateur = @login AND mdputilisateur = @mdp";
                     using (var myCmd = new NpgsqlCommand(select, myCnx))
                     {
                         myCmd.Parameters.AddWithValue("@login", login);
@@ -21,8 +21,9 @@ namespace _2SIO_FSI_Adminstration.DAO
                             {
                                 int idUti = dr.GetInt32(0);
                                 string loginRetrieved = dr.GetString(1);
+                                string nomUti = dr.GetString(2);
         
-                                return new Utilisateur(idUti, loginRetrieved);
+                                return new Utilisateur(idUti, loginRetrieved, nomUti);
                             }
                         }
                     }
