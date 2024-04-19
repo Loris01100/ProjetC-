@@ -166,7 +166,7 @@
             // 
             // listeDesSectinosToolStripMenuItem
             // 
-            this.listeDesSectinosToolStripMenuItem.Name = "listeDesSectinosToolStripMenuItem";
+            this.listeDesSectinosToolStripMenuItem.Name = "listeDesSectinosToolStrip MenuItem";
             this.listeDesSectinosToolStripMenuItem.Size = new System.Drawing.Size(249, 24);
             this.listeDesSectinosToolStripMenuItem.Text = "Liste des Sections";
             // 

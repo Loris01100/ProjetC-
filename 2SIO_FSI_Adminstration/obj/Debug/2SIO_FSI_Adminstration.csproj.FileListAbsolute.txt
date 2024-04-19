@@ -262,3 +262,9 @@ C:\école\ProjetCSharp\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Admin
 C:\école\ProjetCSharp\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.ListeSection.resources
 C:\école\ProjetCSharp\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.updateDeleteCours.resources
 C:\école\ProjetCSharp\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.updateDeleteSection.resources
+C:\Users\quang\Desktop\c#_projet2\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.AjouterUnCours.resources
+C:\Users\quang\Desktop\c#_projet2\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.getCours.resources
+C:\Users\quang\Desktop\c#_projet2\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.ListeCours.resources
+C:\Users\quang\Desktop\c#_projet2\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.ListeSection.resources
+C:\Users\quang\Desktop\c#_projet2\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.updateDeleteCours.resources
+C:\Users\quang\Desktop\c#_projet2\ProjetC-\2SIO_FSI_Adminstration\obj\Debug\_2SIO_FSI_Adminstration.WinForm.updateDeleteSection.resources
