@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Net.Http;
 using _2SIO_FSI_Adminstration.Classe;
 using Npgsql;
 using NpgsqlTypes;
@@ -60,7 +62,7 @@ namespace _2SIO_FSI_Adminstration.DAO
             }
         }
 
-        public void DeleteEtudiant(int idEtudiant)
+        public int DeleteEtudiant(int idEtudiant)
         {
             try
             {
@@ -70,12 +72,12 @@ namespace _2SIO_FSI_Adminstration.DAO
                     using (var commande = new NpgsqlCommand(requete, connexion))
                     {
                         commande.Parameters.Add(new NpgsqlParameter("id", NpgsqlDbType.Integer)).Value = idEtudiant;
-                        commande.ExecuteNonQuery();
+                        return commande.ExecuteNonQuery();
                     }
                 }
             }
             catch (Exception ex)
-            {
+            {   
                 throw new Exception("Erreur lors de la suppression de l'étudiant", ex);
             }
         }
@@ -123,49 +125,37 @@ namespace _2SIO_FSI_Adminstration.DAO
             return etudiants;
         }
 
-        public Etudiant GetById(int idEtudiant)
+        public Etudiant GetById(int etudiantId)
         {
-            Etudiant etudiant = null;
-
-            try
+            using (var connexion = ConnexionSQL.Instance)
             {
-                using (var connexion = ConnexionSQL.Instance)
+                var requete = @"SELECT e.idEtudiant, e.nomEtudiant, e.prenomEtudiant, e.adresse, s.libelleSection FROM Etudiant e JOIN Section s ON e.IdSection = s.IdSection WHERE e.IdEtudiant = @IdEtudiant";
+        
+                using (var command = new NpgsqlCommand(requete, connexion))
                 {
-                    string requete = "SELECT etudiant.idetudiant, etudiant.nomEtudiant, etudiant.prenomEtudiant, etudiant.adresse, section.idsection, section.libelleSection FROM etudiant INNER JOIN section ON etudiant.idsection = section.idsection WHERE etudiant.idetudiant = @id;";
+                    command.Parameters.AddWithValue("@IdEtudiant", etudiantId);
 
-                    using (var commande = new NpgsqlCommand(requete, connexion))
+                    using (var reader = command.ExecuteReader())
                     {
-                        commande.Parameters.Add(new NpgsqlParameter("@id", NpgsqlDbType.Integer)).Value = idEtudiant;
-
-                        using (var dr = commande.ExecuteReader())
+                        if (reader.Read())
                         {
-                            if (dr.Read()) 
+                            Etudiant etudiant = new Etudiant()
                             {
-                                Section uneSection = new Section
+                                IdEtudiant = reader.GetInt32(reader.GetOrdinal("IdEtudiant")),
+                                NomEtudiant = reader.GetString(reader.GetOrdinal("NomEtudiant")),
+                                PrenomEtudiant = reader.GetString(reader.GetOrdinal("PrenomEtudiant")),
+                                Adresse = reader.GetString(reader.GetOrdinal("Adresse")),
+                                IdSection = new Section
                                 {
-                                    IdSection = dr.GetInt32(4), 
-                                    LibelleSection = dr.GetString(5)
-                                };
-
-                                etudiant = new Etudiant
-                                {
-                                    IdEtudiant = dr.GetInt32(0),
-                                    NomEtudiant = dr.GetString(1),
-                                    PrenomEtudiant = dr.GetString(2),
-                                    Adresse = dr.GetString(3),
-                                    IdSection = uneSection
-                                };
-                            }
+                                    LibelleSection = reader.GetString(reader.GetOrdinal("LibelleSection"))
+                                }
+                            };
+                            return etudiant;
                         }
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                throw new Exception($"Erreur lors de la récupération de l'étudiant avec l'ID {idEtudiant}", ex);
-            }
-
-            return etudiant; // Retourne l'objet Etudiant trouvé ou null
+            return null;
         }
     }
 }
