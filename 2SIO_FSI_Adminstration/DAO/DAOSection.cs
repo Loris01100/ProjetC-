@@ -16,17 +16,17 @@ namespace _2SIO_FSI_Adminstration.DAO
             {
                 using (var connexion = ConnexionSQL.Instance)
                 {
-                    string requete = "SELECT * FROM section;";
+                    string requete = "SELECT * from section";
                     using (var commande = new NpgsqlCommand(requete, connexion))
                     using (var dr = commande.ExecuteReader())
                     {
                         while (dr.Read())
                         {
-                            Section section = new Section()
-                            {
-                                IdSection = dr.GetInt32(0),
-                                LibelleSection = dr.GetString(1),
-                            };
+                            int IdSection = dr.GetInt32(0);
+                            string LibelleSection = dr.GetString(1);
+
+                            Section section = new Section(IdSection, LibelleSection);
+
                             sections.Add(section);
                         }
                     }
@@ -34,7 +34,8 @@ namespace _2SIO_FSI_Adminstration.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("Erreur lors de la récupération des sections", ex);
+                Console.WriteLine(ex.ToString());
+                throw;
             }
 
             return sections;
@@ -100,6 +101,31 @@ namespace _2SIO_FSI_Adminstration.DAO
                 Console.WriteLine(ex.Message);
                 return false;
             }
+        }
+        public Section GetById(int sectionId)
+        {
+            using (var connexion = ConnexionSQL.Instance)
+            {
+                var requete = @"SELECT * from Section WHERE IdSection = @IdSection";
+                using (var command = new NpgsqlCommand(requete, connexion))
+                {
+                    command.Parameters.AddWithValue("@IdSection", sectionId);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            Section section = new Section()
+                            {
+                                IdSection = reader.GetInt32(reader.GetOrdinal("IdSection")),
+                                LibelleSection = reader.GetString(reader.GetOrdinal("LibelleSection"))
+                            };
+                            return section;
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }

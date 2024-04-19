@@ -36,35 +36,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             Form formListeSection = new ListeSection(uti);
             formListeSection.Show();
         }
-        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
-        }
-        private void ListeCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
-        }
-        private void ajouterUnCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
-        }
-        private void updateDeleteCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
-        }
+        
     }
 }

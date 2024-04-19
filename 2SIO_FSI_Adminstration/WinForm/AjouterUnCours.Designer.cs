@@ -126,7 +126,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.updateDeleteSectionToolStripMenuItem.Name = "updateDeleteSectionToolStripMenuItem";
             this.updateDeleteSectionToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
             this.updateDeleteSectionToolStripMenuItem.Text = "Modification des sections";
-            this.updateDeleteSectionToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteSectionToolStripMenuItem_Click);
             // 
             // gestionCoursToolStripMenuItem1
             // 
@@ -140,28 +139,24 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.listeDesCoursToolStripMenuItem.Name = "listeDesCoursToolStripMenuItem";
             this.listeDesCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.listeDesCoursToolStripMenuItem.Text = "Liste des cours";
-            this.listeDesCoursToolStripMenuItem.Click += new System.EventHandler(this.ListeCoursToolStripMenuItem_Click);
             // 
             // ajouterUnCoursToolStripMenuItem
             // 
             this.ajouterUnCoursToolStripMenuItem.Name = "ajouterUnCoursToolStripMenuItem";
             this.ajouterUnCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.ajouterUnCoursToolStripMenuItem.Text = "Ajouter des cours";
-            this.ajouterUnCoursToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnCoursToolStripMenuItem_Click);
             // 
             // updateDeleteCoursToolStripMenuItem
             // 
             this.updateDeleteCoursToolStripMenuItem.Name = "updateDeleteCoursToolStripMenuItem";
             this.updateDeleteCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.updateDeleteCoursToolStripMenuItem.Text = "Modification des cours";
-            this.updateDeleteCoursToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteCoursToolStripMenuItem_Click);
             // 
             // getCoursToolStripMenuItem
             // 
             this.getCoursToolStripMenuItem.Name = "getCoursToolStripMenuItem";
             this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.getCoursToolStripMenuItem.Text = "Cours";
-            this.getCoursToolStripMenuItem.Click += new System.EventHandler(this.getCoursToolStripMenuItem_Click);
             // 
             // PanelLogo
             // 

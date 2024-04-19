@@ -124,7 +124,6 @@
             this.updateDeleteSectionToolStripMenuItem.Name = "updateDeleteSectionToolStripMenuItem";
             this.updateDeleteSectionToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
             this.updateDeleteSectionToolStripMenuItem.Text = "Modification des sections";
-            this.updateDeleteSectionToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteSectionToolStripMenuItem_Click);
             // 
             // ajouterSectionsToolStripMenuItem
             // 

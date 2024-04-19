@@ -97,15 +97,15 @@ namespace _2SIO_FSI_Adminstration.DAO
                         while (dr.Read())
                         {
                             Section uneSection = new Section();
-                            int IdSection = dr.GetInt32(4); // idsection est un entier
-                            string LibelleSection = dr.GetString(5); // libelleSection est une chaîne de caractères
+                            int IdSection = dr.GetInt32(4);
+                            string LibelleSection = dr.GetString(5);
                             uneSection.IdSection = IdSection;
                             uneSection.LibelleSection = LibelleSection;
 
-                            int IdEtudiant = dr.GetInt32(0); // idetudiant est un entier
-                            string NomEtudiant = dr.GetString(1); // nomEtudiant est une chaîne de caractères
-                            string PrenomEtudiant = dr.GetString(2); // prenomEtudiant est une chaîne de caractères
-                            string Adresse = dr.GetString(3); // adresse est une chaîne de caractères
+                            int IdEtudiant = dr.GetInt32(0);
+                            string NomEtudiant = dr.GetString(1);
+                            string PrenomEtudiant = dr.GetString(2);
+                            string Adresse = dr.GetString(3);
 
                             Etudiant etudiant = new Etudiant(IdEtudiant, NomEtudiant, PrenomEtudiant, uneSection,
                                 Adresse);

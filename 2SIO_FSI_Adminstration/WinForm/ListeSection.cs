@@ -16,31 +16,35 @@ namespace _2SIO_FSI_Adminstration.WinForm
         {
             InitializeComponent();
             uti = utiConnecte;
+            dgvSections.CellDoubleClick += dgvSections_CellDoubleClick;
 
-            // Utilisation de ConnexionSQL.Instance pour la connexion
-            using (var myCnx = ConnexionSQL.Instance)
+            DAOSection dao = new DAOSection();
+            List<Section> mesSections = dao.GetAll();
+            
+            dgvSections.Rows.Clear();
+            foreach (Section sec in mesSections)
             {
-                string select = "SELECT * FROM section";
-                using (var myCmd = new NpgsqlCommand(select, myCnx))
-                using (var dr = myCmd.ExecuteReader())
-                {
-                    List<Section> mesSections = new List<Section>();
-                    while (dr.Read())
-                    {
-                        int idSection = dr.GetInt32(0);
-                        string libelleSection = dr.GetString(1);
-
-                        Section uneSection = new Section(idSection, libelleSection);
-                        mesSections.Add(uneSection);
-                    }
-
-                    // Affichage dans le dataGridView
-                    foreach (Section sec in mesSections)
-                    {
-                        dgvSections.Rows.Add(sec.LibelleSection);
-                    }
-                }
+                int index = dgvSections.Rows.Add();
+                dgvSections.Rows[index].Cells["LibelleSection"].Value = sec.LibelleSection;
+                dgvSections.Rows[index].Tag = sec.IdSection;
             }
+        }
+        private void dgvSections_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int sectionId = (int)dgvSections.Rows[e.RowIndex].Tag;
+                updateDeleteSection(sectionId);
+            }
+        }
+        
+        private void updateDeleteSection(int sectionId)
+        {
+            this.Hide();
+            DAOSection dao = new DAOSection();
+            Section section = dao.GetById(sectionId);
+            Form formConsulterEtudiant = new updateDeleteSection(section, uti);
+            formConsulterEtudiant.Show();
         }
         private void bQuitter_Click(object sender, EventArgs e)
         {
@@ -78,12 +82,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             Form formListeSection = new ListeSection(uti);
             formListeSection.Show();
-        }
-        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
         }
         private void ListeCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {

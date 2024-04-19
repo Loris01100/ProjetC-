@@ -50,6 +50,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.PanelInterieur = new System.Windows.Forms.Panel();
             this.dgvSections = new System.Windows.Forms.DataGridView();
             this.libelleSection = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Détail = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.dgvListeSection = new System.Windows.Forms.DataGridView();
             this.bFermer = new System.Windows.Forms.Button();
             this.PanelLogo.SuspendLayout();
@@ -203,7 +204,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.updateDeleteSectionToolStripMenuItem.Name = "updateDeleteSectionToolStripMenuItem";
             this.updateDeleteSectionToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
             this.updateDeleteSectionToolStripMenuItem.Text = "Modification des sections";
-            this.updateDeleteSectionToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteSectionToolStripMenuItem_Click);
             // 
             // PanelInterieur
             // 
@@ -221,7 +221,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.dgvSections.AllowUserToDeleteRows = false;
             this.dgvSections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.libelleSection });
+            this.dgvSections.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.libelleSection, this.Détail });
             this.dgvSections.Location = new System.Drawing.Point(0, 2);
             this.dgvSections.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvSections.MultiSelect = false;
@@ -237,6 +237,13 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.libelleSection.MinimumWidth = 6;
             this.libelleSection.Name = "libelleSection";
             this.libelleSection.ReadOnly = true;
+            // 
+            // Détail
+            // 
+            this.Détail.HeaderText = "Détail";
+            this.Détail.Name = "Détail";
+            this.Détail.ReadOnly = true;
+            this.Détail.Width = 80;
             // 
             // dgvListeSection
             // 
@@ -293,6 +300,8 @@ namespace _2SIO_FSI_Adminstration.WinForm
             ((System.ComponentModel.ISupportInitialize)(this.dgvListeSection)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Détail;
 
         private System.Windows.Forms.Panel PanelLogo;
         private System.Windows.Forms.PictureBox pbLogo;
