@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using _2SIO_FSI_Adminstration.Classe;
 
 namespace _2SIO_FSI_Adminstration.WinForm

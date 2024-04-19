@@ -44,7 +44,9 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private void ConsulterEtudiant(int etudiantId)
         {
             this.Hide();
-            Form formConsulterEtudiant = new ConsulterEtudiant();
+            DAOEtudiant dao = new DAOEtudiant();
+            Etudiant etudiant = dao.GetById(etudiantId);
+            Form formConsulterEtudiant = new ConsulterEtudiant(etudiant, x);
             formConsulterEtudiant.Show();
         }
 
