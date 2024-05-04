@@ -45,20 +45,8 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.ajouterUnCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PanelLogo = new System.Windows.Forms.Panel();
-            this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.PanelQuitter = new System.Windows.Forms.Panel();
-            this.bQuitter = new System.Windows.Forms.Button();
-            this.PanelInterieur = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lBien = new System.Windows.Forms.Label();
-            this.tbUserConnecte = new System.Windows.Forms.TextBox();
             this.PanelMenu.SuspendLayout();
             this.msGlobal.SuspendLayout();
-            this.PanelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            this.PanelQuitter.SuspendLayout();
-            this.PanelInterieur.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -126,6 +114,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.updateDeleteSectionToolStripMenuItem.Name = "updateDeleteSectionToolStripMenuItem";
             this.updateDeleteSectionToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
             this.updateDeleteSectionToolStripMenuItem.Text = "Modification des sections";
+            this.updateDeleteSectionToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteSectionToolStripMenuItem_Click);
             // 
             // gestionCoursToolStripMenuItem1
             // 
@@ -139,104 +128,28 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.listeDesCoursToolStripMenuItem.Name = "listeDesCoursToolStripMenuItem";
             this.listeDesCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.listeDesCoursToolStripMenuItem.Text = "Liste des cours";
+            this.listeDesCoursToolStripMenuItem.Click += new System.EventHandler(this.ListeCoursToolStripMenuItem_Click);
             // 
             // ajouterUnCoursToolStripMenuItem
             // 
             this.ajouterUnCoursToolStripMenuItem.Name = "ajouterUnCoursToolStripMenuItem";
             this.ajouterUnCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.ajouterUnCoursToolStripMenuItem.Text = "Ajouter des cours";
+            this.ajouterUnCoursToolStripMenuItem.Click += new System.EventHandler(this.ajouterUnCoursToolStripMenuItem_Click);
             // 
             // updateDeleteCoursToolStripMenuItem
             // 
             this.updateDeleteCoursToolStripMenuItem.Name = "updateDeleteCoursToolStripMenuItem";
             this.updateDeleteCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.updateDeleteCoursToolStripMenuItem.Text = "Modification des cours";
+            this.updateDeleteCoursToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteCoursToolStripMenuItem_Click);
             // 
             // getCoursToolStripMenuItem
             // 
             this.getCoursToolStripMenuItem.Name = "getCoursToolStripMenuItem";
             this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
             this.getCoursToolStripMenuItem.Text = "Cours";
-            // 
-            // PanelLogo
-            // 
-            this.PanelLogo.Controls.Add(this.pbLogo);
-            this.PanelLogo.Location = new System.Drawing.Point(0, 0);
-            this.PanelLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelLogo.Name = "PanelLogo";
-            this.PanelLogo.Size = new System.Drawing.Size(78, 73);
-            this.PanelLogo.TabIndex = 9;
-            // 
-            // pbLogo
-            // 
-            this.pbLogo.Location = new System.Drawing.Point(3, 0);
-            this.pbLogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pbLogo.Name = "pbLogo";
-            this.pbLogo.Size = new System.Drawing.Size(73, 70);
-            this.pbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbLogo.TabIndex = 0;
-            this.pbLogo.TabStop = false;
-            // 
-            // PanelQuitter
-            // 
-            this.PanelQuitter.Controls.Add(this.bQuitter);
-            this.PanelQuitter.Location = new System.Drawing.Point(839, 0);
-            this.PanelQuitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelQuitter.Name = "PanelQuitter";
-            this.PanelQuitter.Size = new System.Drawing.Size(115, 37);
-            this.PanelQuitter.TabIndex = 10;
-            // 
-            // bQuitter
-            // 
-            this.bQuitter.BackColor = System.Drawing.Color.LightCyan;
-            this.bQuitter.Location = new System.Drawing.Point(4, 2);
-            this.bQuitter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.bQuitter.Name = "bQuitter";
-            this.bQuitter.Size = new System.Drawing.Size(107, 32);
-            this.bQuitter.TabIndex = 7;
-            this.bQuitter.Text = "QUITTER";
-            this.bQuitter.UseVisualStyleBackColor = false;
-            this.bQuitter.Click += new System.EventHandler(this.bQuitter_Click);
-            // 
-            // PanelInterieur
-            // 
-            this.PanelInterieur.Controls.Add(this.label1);
-            this.PanelInterieur.Controls.Add(this.lBien);
-            this.PanelInterieur.Location = new System.Drawing.Point(81, 28);
-            this.PanelInterieur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelInterieur.Name = "PanelInterieur";
-            this.PanelInterieur.Size = new System.Drawing.Size(752, 389);
-            this.PanelInterieur.TabIndex = 11;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.label1.Location = new System.Drawing.Point(129, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(542, 26);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Application de gestion administration de l\'école FSI";
-            // 
-            // lBien
-            // 
-            this.lBien.AutoSize = true;
-            this.lBien.ForeColor = System.Drawing.Color.DarkOliveGreen;
-            this.lBien.Location = new System.Drawing.Point(317, 13);
-            this.lBien.Name = "lBien";
-            this.lBien.Size = new System.Drawing.Size(173, 26);
-            this.lBien.TabIndex = 13;
-            this.lBien.Text = "BIENVENUE !!";
-            // 
-            // tbUserConnecte
-            // 
-            this.tbUserConnecte.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbUserConnecte.ForeColor = System.Drawing.Color.Blue;
-            this.tbUserConnecte.Location = new System.Drawing.Point(848, 55);
-            this.tbUserConnecte.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tbUserConnecte.Name = "tbUserConnecte";
-            this.tbUserConnecte.Size = new System.Drawing.Size(93, 27);
-            this.tbUserConnecte.TabIndex = 12;
+            this.getCoursToolStripMenuItem.Click += new System.EventHandler(this.getCoursToolStripMenuItem_Click);
             // 
             // AjouterUnCours
             // 
@@ -244,10 +157,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(956, 427);
-            this.Controls.Add(this.tbUserConnecte);
-            this.Controls.Add(this.PanelInterieur);
-            this.Controls.Add(this.PanelQuitter);
-            this.Controls.Add(this.PanelLogo);
             this.Controls.Add(this.PanelMenu);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Blue;
@@ -259,13 +168,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.PanelMenu.PerformLayout();
             this.msGlobal.ResumeLayout(false);
             this.msGlobal.PerformLayout();
-            this.PanelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            this.PanelQuitter.ResumeLayout(false);
-            this.PanelInterieur.ResumeLayout(false);
-            this.PanelInterieur.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
 
         #endregion
@@ -279,21 +182,14 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private System.Windows.Forms.ToolStripMenuItem ajouterUnEtudiantToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listeDesSectionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteSectionToolStripMenuItem;
-        private System.Windows.Forms.Panel PanelLogo;
-        private System.Windows.Forms.PictureBox pbLogo;
-        private System.Windows.Forms.Panel PanelQuitter;
+
         //     private System.Windows.Forms.Button bDeConnexion;
-        private System.Windows.Forms.Panel PanelInterieur;
         //    private System.Windows.Forms.Label lTexteBienvenue;
         //     private System.Windows.Forms.Label lBienvenue;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lBien;
-        private System.Windows.Forms.Button bQuitter;
         private System.Windows.Forms.ToolStripMenuItem gestionCoursToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listeDesCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getCoursToolStripMenuItem;
-        private System.Windows.Forms.TextBox tbUserConnecte;
     }
 }

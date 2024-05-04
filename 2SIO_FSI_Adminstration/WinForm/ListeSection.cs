@@ -43,8 +43,8 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             DAOSection dao = new DAOSection();
             Section section = dao.GetById(sectionId);
-            Form formConsulterEtudiant = new updateDeleteSection(section, uti);
-            formConsulterEtudiant.Show();
+            Form formConsulterSection = new updateDeleteSection(section, uti);
+            formConsulterSection.Show();
         }
         private void bQuitter_Click(object sender, EventArgs e)
         {
@@ -89,16 +89,28 @@ namespace _2SIO_FSI_Adminstration.WinForm
             Form formListeCours = new ListeCours(uti);
             formListeCours.Show();
         }
+        private void ajouterSectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAjoutSection = new AjoutSection(uti);
+            formAjoutSection.Show();
+        }
         private void ajouterUnCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form formAjouterCours = new AjouterUnCours(uti);
             formAjouterCours.Show();
         }
+        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti);
+            formUpdateDeleteSection.Show();
+        }
         private void updateDeleteCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteCours = new updateDeleteCours(uti);
+            Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
         }
         private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)

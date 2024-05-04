@@ -74,8 +74,14 @@ namespace _2SIO_FSI_Adminstration
         private void updateDeleteCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteCours = new updateDeleteCours(uti);
+            Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
+        }
+        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti);
+            formUpdateDeleteSection.Show();
         }
         private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {

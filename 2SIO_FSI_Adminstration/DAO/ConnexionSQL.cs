@@ -7,7 +7,7 @@ namespace _2SIO_FSI_Adminstration.DAO
     public class ConnexionSQL
     {
         private static NpgsqlConnection instance;
-        private static readonly string Conx = "Server=localhost;Port=5432;Database=fsi_administration;User Id=postgres;Password=080600;";
+        private static readonly string Conx = "Server=localhost;Port=5432;Database=fsi_administration;User Id=postgres;Password=BOLT2017;";
 
         private ConnexionSQL() { }
 
