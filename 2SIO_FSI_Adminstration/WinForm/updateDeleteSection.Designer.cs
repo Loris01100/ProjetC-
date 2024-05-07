@@ -54,8 +54,16 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.ajouterUnCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PanelInterieur = new System.Windows.Forms.Panel();
+            this.dgvListeEtuSec = new System.Windows.Forms.DataGridView();
+            this.dgvEtuSec = new System.Windows.Forms.DataGridView();
+            this.PrenomEtudiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomEtudiant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.msGlobal.SuspendLayout();
+            this.PanelInterieur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeEtuSec)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEtuSec)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -238,12 +246,60 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.updateDeleteCoursToolStripMenuItem.Text = "Modification des cours";
             this.updateDeleteCoursToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteCoursToolStripMenuItem_Click);
             // 
-            // getCoursToolStripMenuItem
+            // PanelInterieur
             // 
-            this.getCoursToolStripMenuItem.Name = "getCoursToolStripMenuItem";
-            this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-            this.getCoursToolStripMenuItem.Text = "Cours";
-            this.getCoursToolStripMenuItem.Click += new System.EventHandler(this.getCoursToolStripMenuItem_Click);
+            this.PanelInterieur.Controls.Add(this.dgvListeEtuSec);
+            this.PanelInterieur.Location = new System.Drawing.Point(81, 28);
+            this.PanelInterieur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelInterieur.Name = "PanelInterieur";
+            this.PanelInterieur.Size = new System.Drawing.Size(752, 389);
+            this.PanelInterieur.TabIndex = 12;
+            // 
+            // dgvListeEtuSec
+            // 
+            this.dgvListeEtuSec.AllowUserToOrderColumns = true;
+            this.dgvListeEtuSec.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListeEtuSec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListeEtuSec.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListeEtuSec.GridColor = System.Drawing.Color.SkyBlue;
+            this.dgvListeEtuSec.Location = new System.Drawing.Point(0, 0);
+            this.dgvListeEtuSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvListeEtuSec.Name = "dgvListeEtuSec";
+            this.dgvListeEtuSec.RowHeadersWidth = 51;
+            this.dgvListeEtuSec.Size = new System.Drawing.Size(752, 389);
+            this.dgvListeEtuSec.TabIndex = 0;
+            // 
+            // dgvEtuSec
+            // 
+            this.dgvEtuSec.AllowUserToAddRows = false;
+            this.dgvEtuSec.AllowUserToDeleteRows = false;
+            this.dgvEtuSec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvEtuSec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEtuSec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {this.NomEtudiant, this.PrenomEtudiant });
+            this.dgvEtuSec.Location = new System.Drawing.Point(668, 63);
+            this.dgvEtuSec.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvEtuSec.MultiSelect = false;
+            this.dgvEtuSec.Name = "dgvEtuSec";
+            this.dgvEtuSec.ReadOnly = true;
+            this.dgvEtuSec.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvEtuSec.Size = new System.Drawing.Size(407, 285);
+            this.dgvEtuSec.TabIndex = 31;
+            // 
+            // PrenomEtudiant
+            // 
+            this.PrenomEtudiant.HeaderText = "Prénom";
+            this.PrenomEtudiant.MinimumWidth = 6;
+            this.PrenomEtudiant.Name = "PrenomEtudiant";
+            this.PrenomEtudiant.ReadOnly = true;
+            this.PrenomEtudiant.Width = 112;
+            // 
+            // NomEtudiant
+            // 
+            this.NomEtudiant.HeaderText = "Nom";
+            this.NomEtudiant.MinimumWidth = 6;
+            this.NomEtudiant.Name = "NomEtudiant";
+            this.NomEtudiant.ReadOnly = true;
+            this.NomEtudiant.Width = 112;
             // 
             // updateDeleteSection
             // 
@@ -251,6 +307,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1300, 731);
+            this.Controls.Add(this.dgvEtuSec);
             this.Controls.Add(this.msGlobal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.boutonModifier);
@@ -266,9 +323,14 @@ namespace _2SIO_FSI_Adminstration.WinForm
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.msGlobal.ResumeLayout(false);
             this.msGlobal.PerformLayout();
+            this.PanelInterieur.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeEtuSec)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEtuSec)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.DataGridView dgvEtuSec;
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
@@ -295,7 +357,11 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private System.Windows.Forms.ToolStripMenuItem ajouterUnCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getCoursToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvListeEtuSec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomEtudiant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PrenomEtudiant;
         private System.Windows.Forms.ToolStripMenuItem ajouterSectionsToolStripMenuItem;
+        private System.Windows.Forms.Panel PanelInterieur;
 
         #endregion
     }

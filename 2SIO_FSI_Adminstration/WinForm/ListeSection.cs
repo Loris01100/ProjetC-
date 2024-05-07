@@ -34,7 +34,11 @@ namespace _2SIO_FSI_Adminstration.WinForm
             if (e.RowIndex != -1)
             {
                 int sectionId = (int)dgvSections.Rows[e.RowIndex].Tag;
-                updateDeleteSection(sectionId);
+                this.Hide();
+                DAOSection dao = new DAOSection();
+                Section section = dao.GetById(sectionId);
+                Form formConsulterSection = new updateDeleteSection(section, uti, sectionId);
+                formConsulterSection.Show();
             }
         }
         
@@ -43,7 +47,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             DAOSection dao = new DAOSection();
             Section section = dao.GetById(sectionId);
-            Form formConsulterSection = new updateDeleteSection(section, uti);
+            Form formConsulterSection = new updateDeleteSection(section, uti, sectionId);
             formConsulterSection.Show();
         }
         private void bQuitter_Click(object sender, EventArgs e)
@@ -104,7 +108,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti);
+            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti, 0);
             formUpdateDeleteSection.Show();
         }
         private void updateDeleteCoursToolStripMenuItem_Click(object sender, EventArgs e)
@@ -112,12 +116,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {

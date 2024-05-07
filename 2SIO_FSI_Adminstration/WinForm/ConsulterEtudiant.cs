@@ -10,7 +10,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
     {
         private Etudiant etudiant;
         private Utilisateur uti;
-        private int idEtudiant;
+        private int IdEtudiant;
         public ConsulterEtudiant(Etudiant etu, Utilisateur utiConnecte)
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
         {
             tbAENom.Text = etudiant.NomEtudiant;
             tbAEPrenom.Text = etudiant.PrenomEtudiant;
-            tbAESection.Text = etudiant.IdSection.LibelleSection;
+            tbAESection.Text = etudiant.IdSection != null ? etudiant.IdSection.LibelleSection : "Non assigné";
             tbAEAdresse.Text = etudiant.Adresse;
         }
         
@@ -35,12 +35,49 @@ namespace _2SIO_FSI_Adminstration.WinForm
         }
         private void boutonModifier_Click(object sender, EventArgs e)
         {
+            bool isUpdated = false;
+            DAOEtudiant dao = new DAOEtudiant();
+
+
+            if (tbAENom.Text != etudiant.NomEtudiant || tbAEPrenom.Text != etudiant.PrenomEtudiant || tbAEAdresse.Text != etudiant.Adresse)
+            {
+                dao.UpdateEtudiant(etudiant.IdEtudiant, tbAENom.Text, tbAEPrenom.Text, tbAEAdresse.Text);
+                isUpdated = true;
+            }
+            
+            if (tbAESection.Text != etudiant.IdSection.LibelleSection)
+            {
+                dao.UpdateSectionByEtudiant(etudiant.IdEtudiant, tbAESection.Text);
+                isUpdated = true;
+            }
+            
+            if (isUpdated)
+            {
+                MessageBox.Show("Les informations ont été mises à jour avec succès.", "Mise à jour", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Aucune modification détectée.", "Mise à jour", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             this.Hide();
             Form listEtudiant = new ListeEtudiant(uti);
             listEtudiant.Show();
         }
+        
         private void boutonSupprimer_Click(object sender, EventArgs e)
         {
+            DAOEtudiant dao = new DAOEtudiant();
+
+            try
+            {
+                dao.DeleteEtudiant(etudiant.IdEtudiant); 
+                MessageBox.Show("Étudiant supprimé avec succès.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la suppression de l'étudiant: " + ex.Message);
+            }
+
             this.Hide();
             Form listEtudiant = new ListeEtudiant(uti);
             listEtudiant.Show();
@@ -98,14 +135,8 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteCours = new updateDeleteSection(null, uti);
+            Form formUpdateDeleteCours = new updateDeleteSection(null, uti, 0);
             formUpdateDeleteCours.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)

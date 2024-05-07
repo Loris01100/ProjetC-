@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using _2SIO_FSI_Adminstration.Classe;
@@ -10,16 +11,32 @@ namespace _2SIO_FSI_Adminstration.WinForm
     {
         private Section section;
         private Utilisateur uti;
-        public updateDeleteSection(Section sec, Utilisateur utiConnecte)
+        private int sectionId;
+        public updateDeleteSection(Section sec, Utilisateur utiConnecte, int sectionId)
         {
             InitializeComponent();
             section = sec;
             uti = utiConnecte;
-            DetailCours();
+            this.sectionId = sectionId;
+            DetailSection();
+            EtudiantCharger();
         }
-        private void DetailCours()
+        private void DetailSection()
         {
             tbAESection.Text = section.LibelleSection;
+        }
+        private void EtudiantCharger()
+        {
+            DAOEtudiant dao = new DAOEtudiant();
+            List<Etudiant> mesEtudiants = dao.GetEtudiantsBySection(sectionId);
+
+            dgvEtuSec.Rows.Clear();
+            foreach (Etudiant etu in mesEtudiants)
+            {
+                int index = dgvEtuSec.Rows.Add();
+                dgvEtuSec.Rows[index].Cells["NomEtudiant"].Value = etu.NomEtudiant;
+                dgvEtuSec.Rows[index].Cells["PrenomEtudiant"].Value = etu.PrenomEtudiant;
+            }
         }
         
         private void boutonRetour_Click(object sender, EventArgs e)
@@ -30,17 +47,52 @@ namespace _2SIO_FSI_Adminstration.WinForm
         }
         private void boutonModifier_Click(object sender, EventArgs e)
         {
+            bool isUpdated = false;
+            DAOSection dao = new DAOSection();
+
+
+            if (tbAESection.Text != section.LibelleSection)
+            {
+                dao.UpdateSection(section.IdSection, tbAESection.Text);
+                isUpdated = true;
+            }
+            
+            if (isUpdated)
+            {
+                MessageBox.Show("Les informations ont été mises à jour avec succès.", "Mise à jour", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Aucune modification détectée.", "Mise à jour", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             this.Hide();
             Form listSection = new ListeSection(uti);
             listSection.Show();
         }
         private void boutonSupprimer_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form listSection = new ListeSection(uti);
-            listSection.Show();
-            
+            DAOSection dao = new DAOSection();
+            try
+            {
+                // Étape 1 : Dissocier tous les étudiants de la section
+                dao.RemoveSectionFromStudents(section.IdSection);
+
+                // Étape 2 : Supprimer la section
+                dao.DeleteSection(section.IdSection);
+        
+                MessageBox.Show("Section supprimée avec succès.");
+        
+                // Après la suppression, masquez ce formulaire et affichez la liste des sections
+                this.Hide();
+                Form listSection = new ListeSection(uti);
+                listSection.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erreur lors de la suppression de la section: " + ex.Message);
+            }
         }
+
         private void boutonEnregistrer_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -89,12 +141,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace _2SIO_FSI_Adminstration.WinForm
+﻿namespace _2SIO_FSI_Adminstration.WinForm
 {
     partial class AjouterUnCours
     {
@@ -19,7 +17,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             {
                 components.Dispose();
             }
-
             base.Dispose(disposing);
         }
 
@@ -31,7 +28,14 @@ namespace _2SIO_FSI_Adminstration.WinForm
         /// </summary>
         private void InitializeComponent()
         {
-            this.PanelMenu = new System.Windows.Forms.Panel();
+            this.lLibelle = new System.Windows.Forms.Label();
+            this.lDescr = new System.Windows.Forms.Label();
+            this.tbAELibelle = new System.Windows.Forms.TextBox();
+            this.tbAEDescr = new System.Windows.Forms.TextBox();
+            this.boutonEffacer = new System.Windows.Forms.Button();
+            this.boutonAjouter = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.boutonRetour = new System.Windows.Forms.Button();
             this.msGlobal = new System.Windows.Forms.MenuStrip();
             this.accueilToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionEtudiantToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,23 +44,102 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.gestionSectionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDesSectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteSectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ajouterSectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gestionCoursToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.listeDesCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ajouterUnCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.PanelMenu.SuspendLayout();
+            this.cbSection = new System.Windows.Forms.ComboBox();
+            this.Section = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.msGlobal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // PanelMenu
+            // lLibelle
             // 
-            this.PanelMenu.Controls.Add(this.msGlobal);
-            this.PanelMenu.Location = new System.Drawing.Point(81, 0);
-            this.PanelMenu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.PanelMenu.Name = "PanelMenu";
-            this.PanelMenu.Size = new System.Drawing.Size(752, 23);
-            this.PanelMenu.TabIndex = 7;
+            this.lLibelle.AutoSize = true;
+            this.lLibelle.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lLibelle.Location = new System.Drawing.Point(300, 111);
+            this.lLibelle.Name = "lLibelle";
+            this.lLibelle.Size = new System.Drawing.Size(84, 26);
+            this.lLibelle.TabIndex = 0;
+            this.lLibelle.Text = "Libelle";
+            // 
+            // lDescr
+            // 
+            this.lDescr.AutoSize = true;
+            this.lDescr.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lDescr.Location = new System.Drawing.Point(297, 165);
+            this.lDescr.Name = "lDescr";
+            this.lDescr.Size = new System.Drawing.Size(131, 26);
+            this.lDescr.TabIndex = 0;
+            this.lDescr.Text = "Description";
+            // 
+            // tbAELibelle
+            // 
+            this.tbAELibelle.Location = new System.Drawing.Point(435, 103);
+            this.tbAELibelle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbAELibelle.Name = "tbAELibelle";
+            this.tbAELibelle.Size = new System.Drawing.Size(178, 34);
+            this.tbAELibelle.TabIndex = 3;
+            // 
+            // tbAEDescr
+            // 
+            this.tbAEDescr.Location = new System.Drawing.Point(435, 157);
+            this.tbAEDescr.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tbAEDescr.Name = "tbAEDescr";
+            this.tbAEDescr.Size = new System.Drawing.Size(178, 34);
+            this.tbAEDescr.TabIndex = 3;
+            // 
+            // boutonEffacer
+            // 
+            this.boutonEffacer.BackColor = System.Drawing.Color.Honeydew;
+            this.boutonEffacer.ForeColor = System.Drawing.Color.DarkGreen;
+            this.boutonEffacer.Location = new System.Drawing.Point(539, 370);
+            this.boutonEffacer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boutonEffacer.Name = "boutonEffacer";
+            this.boutonEffacer.Size = new System.Drawing.Size(148, 32);
+            this.boutonEffacer.TabIndex = 6;
+            this.boutonEffacer.Text = "EFFACER";
+            this.boutonEffacer.UseVisualStyleBackColor = false;
+            this.boutonEffacer.Click += new System.EventHandler(this.boutonEffacer_Click);
+            // 
+            // boutonAjouter
+            // 
+            this.boutonAjouter.BackColor = System.Drawing.Color.Honeydew;
+            this.boutonAjouter.ForeColor = System.Drawing.Color.DarkGreen;
+            this.boutonAjouter.Location = new System.Drawing.Point(234, 370);
+            this.boutonAjouter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boutonAjouter.Name = "boutonAjouter";
+            this.boutonAjouter.Size = new System.Drawing.Size(197, 32);
+            this.boutonAjouter.TabIndex = 7;
+            this.boutonAjouter.Text = "ENREGISTRER";
+            this.boutonAjouter.UseVisualStyleBackColor = false;
+            this.boutonAjouter.Click += new System.EventHandler(this.boutonAjouter_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 52);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 79);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // boutonRetour
+            // 
+            this.boutonRetour.BackColor = System.Drawing.Color.Honeydew;
+            this.boutonRetour.ForeColor = System.Drawing.Color.DarkGreen;
+            this.boutonRetour.Location = new System.Drawing.Point(398, 407);
+            this.boutonRetour.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.boutonRetour.Name = "boutonRetour";
+            this.boutonRetour.Size = new System.Drawing.Size(148, 32);
+            this.boutonRetour.TabIndex = 9;
+            this.boutonRetour.Text = "RETOUR";
+            this.boutonRetour.UseVisualStyleBackColor = false;
+            this.boutonRetour.Click += new System.EventHandler(this.boutonRetour_Click);
             // 
             // msGlobal
             // 
@@ -64,8 +147,8 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.msGlobal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.accueilToolStripMenuItem2, this.gestionEtudiantToolStripMenuItem1, this.gestionSectionToolStripMenuItem1, this.gestionCoursToolStripMenuItem1 });
             this.msGlobal.Location = new System.Drawing.Point(0, 0);
             this.msGlobal.Name = "msGlobal";
-            this.msGlobal.Size = new System.Drawing.Size(752, 28);
-            this.msGlobal.TabIndex = 0;
+            this.msGlobal.Size = new System.Drawing.Size(1025, 28);
+            this.msGlobal.TabIndex = 10;
             this.msGlobal.Text = "Menu";
             // 
             // accueilToolStripMenuItem2
@@ -97,7 +180,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // 
             // gestionSectionToolStripMenuItem1
             // 
-            this.gestionSectionToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.listeDesSectionsToolStripMenuItem, this.updateDeleteSectionToolStripMenuItem });
+            this.gestionSectionToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.listeDesSectionsToolStripMenuItem, this.updateDeleteSectionToolStripMenuItem, this.ajouterSectionsToolStripMenuItem });
             this.gestionSectionToolStripMenuItem1.Name = "gestionSectionToolStripMenuItem1";
             this.gestionSectionToolStripMenuItem1.Size = new System.Drawing.Size(124, 24);
             this.gestionSectionToolStripMenuItem1.Text = "Gestion Section";
@@ -115,6 +198,13 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.updateDeleteSectionToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
             this.updateDeleteSectionToolStripMenuItem.Text = "Modification des sections";
             this.updateDeleteSectionToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteSectionToolStripMenuItem_Click);
+            // 
+            // ajouterSectionsToolStripMenuItem
+            // 
+            this.ajouterSectionsToolStripMenuItem.Name = "ajouterSectionsToolStripMenuItem";
+            this.ajouterSectionsToolStripMenuItem.Size = new System.Drawing.Size(247, 24);
+            this.ajouterSectionsToolStripMenuItem.Text = "Ajout d\'une section";
+            this.ajouterSectionsToolStripMenuItem.Click += new System.EventHandler(this.ajouterSectionsToolStripMenuItem_Click);
             // 
             // gestionCoursToolStripMenuItem1
             // 
@@ -148,48 +238,84 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // 
             this.getCoursToolStripMenuItem.Name = "getCoursToolStripMenuItem";
             this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-            this.getCoursToolStripMenuItem.Text = "Cours";
-            this.getCoursToolStripMenuItem.Click += new System.EventHandler(this.getCoursToolStripMenuItem_Click);
+            // 
+            // cbSection
+            // 
+            this.cbSection.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSection.Location = new System.Drawing.Point(435, 219);
+            this.cbSection.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbSection.Name = "cbSection";
+            this.cbSection.Size = new System.Drawing.Size(178, 33);
+            this.cbSection.TabIndex = 10;
+            // 
+            // Section
+            // 
+            this.Section.AutoSize = true;
+            this.Section.ForeColor = System.Drawing.Color.DarkGreen;
+            this.Section.Location = new System.Drawing.Point(300, 222);
+            this.Section.Name = "Section";
+            this.Section.Size = new System.Drawing.Size(87, 26);
+            this.Section.TabIndex = 11;
+            this.Section.Text = "Section";
             // 
             // AjouterUnCours
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(956, 427);
-            this.Controls.Add(this.PanelMenu);
+            this.ClientSize = new System.Drawing.Size(1025, 551);
+            this.Controls.Add(this.Section);
+            this.Controls.Add(this.msGlobal);
+            this.Controls.Add(this.boutonRetour);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.boutonAjouter);
+            this.Controls.Add(this.cbSection);
+            this.Controls.Add(this.boutonEffacer);
+            this.Controls.Add(this.tbAELibelle);
+            this.Controls.Add(this.tbAEDescr);
+            this.Controls.Add(this.lDescr);
+            this.Controls.Add(this.lLibelle);
             this.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Blue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
             this.Name = "AjouterUnCours";
-            this.Text = "ACCUEIL";
-            this.PanelMenu.ResumeLayout(false);
-            this.PanelMenu.PerformLayout();
+            this.Text = "AjouterSection";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.msGlobal.ResumeLayout(false);
             this.msGlobal.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
-        #endregion
-        private System.Windows.Forms.Panel PanelMenu;
+        private System.Windows.Forms.Label Section;
+
         private System.Windows.Forms.MenuStrip msGlobal;
-        //      private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ToolStripMenuItem accueilToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem gestionEtudiantToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem gestionSectionToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listeDesEtudiantsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnEtudiantToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gestionSectionToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listeDesSectionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteSectionToolStripMenuItem;
-
-        //     private System.Windows.Forms.Button bDeConnexion;
-        //    private System.Windows.Forms.Label lTexteBienvenue;
-        //     private System.Windows.Forms.Label lBienvenue;
+        private System.Windows.Forms.ToolStripMenuItem ajouterSectionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gestionCoursToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem listeDesCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterUnCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem updateDeleteCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getCoursToolStripMenuItem;
+
+        #endregion
+
+        private System.Windows.Forms.Label lLibelle;
+        private System.Windows.Forms.Label lDescr;
+        private System.Windows.Forms.TextBox tbAELibelle;
+        private System.Windows.Forms.TextBox tbAEDescr;
+        private System.Windows.Forms.Button boutonEffacer;
+        private System.Windows.Forms.Button boutonAjouter;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button boutonRetour;
+        private System.Windows.Forms.ComboBox cbSection;
+        //    private P2022_Appli_AdministrationDataSet1TableAdapters.classeTableAdapter classeTableAdapter;
     }
 }

@@ -54,8 +54,15 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.ajouterUnCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.updateDeleteCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.getCoursToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PanelInterieur = new System.Windows.Forms.Panel();
+            this.dgvListeCours = new System.Windows.Forms.DataGridView();
+            this.dgvCours = new System.Windows.Forms.DataGridView();
+            this.LibCours = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.msGlobal.SuspendLayout();
+            this.PanelInterieur.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeCours)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCours)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelMenu
@@ -97,7 +104,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.label1.ForeColor = System.Drawing.Color.DarkGreen;
             this.label1.Location = new System.Drawing.Point(302, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 27);
+            this.label1.Size = new System.Drawing.Size(69, 27);
             this.label1.TabIndex = 16;
             this.label1.Text = "Cours";
             // 
@@ -242,8 +249,53 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // 
             this.getCoursToolStripMenuItem.Name = "getCoursToolStripMenuItem";
             this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-            this.getCoursToolStripMenuItem.Text = "Cours";
-            this.getCoursToolStripMenuItem.Click += new System.EventHandler(this.getCoursToolStripMenuItem_Click);
+            // 
+            // PanelInterieur
+            // 
+            this.PanelInterieur.Controls.Add(this.dgvListeCours);
+            this.PanelInterieur.Location = new System.Drawing.Point(81, 28);
+            this.PanelInterieur.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PanelInterieur.Name = "PanelInterieur";
+            this.PanelInterieur.Size = new System.Drawing.Size(752, 389);
+            this.PanelInterieur.TabIndex = 12;
+            // 
+            // dgvListeCours
+            // 
+            this.dgvListeCours.AllowUserToOrderColumns = true;
+            this.dgvListeCours.BackgroundColor = System.Drawing.Color.White;
+            this.dgvListeCours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListeCours.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvListeCours.GridColor = System.Drawing.Color.SkyBlue;
+            this.dgvListeCours.Location = new System.Drawing.Point(0, 0);
+            this.dgvListeCours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvListeCours.Name = "dgvListeCours";
+            this.dgvListeCours.RowHeadersWidth = 51;
+            this.dgvListeCours.Size = new System.Drawing.Size(752, 389);
+            this.dgvListeCours.TabIndex = 0;
+            // 
+            // dgvCours
+            // 
+            this.dgvCours.AllowUserToAddRows = false;
+            this.dgvCours.AllowUserToDeleteRows = false;
+            this.dgvCours.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvCours.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCours.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { this.LibCours });
+            this.dgvCours.Location = new System.Drawing.Point(643, 56);
+            this.dgvCours.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvCours.MultiSelect = false;
+            this.dgvCours.Name = "dgvCours";
+            this.dgvCours.ReadOnly = true;
+            this.dgvCours.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dgvCours.Size = new System.Drawing.Size(407, 285);
+            this.dgvCours.TabIndex = 32;
+            // 
+            // LibCours
+            // 
+            this.LibCours.HeaderText = "Section";
+            this.LibCours.MinimumWidth = 6;
+            this.LibCours.Name = "LibCours";
+            this.LibCours.ReadOnly = true;
+            this.LibCours.Width = 108;
             // 
             // updateDeleteCours
             // 
@@ -251,6 +303,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1300, 731);
+            this.Controls.Add(this.dgvCours);
             this.Controls.Add(this.msGlobal);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.boutonModifier);
@@ -266,9 +319,15 @@ namespace _2SIO_FSI_Adminstration.WinForm
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.msGlobal.ResumeLayout(false);
             this.msGlobal.PerformLayout();
+            this.PanelInterieur.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListeCours)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCours)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.DataGridView dgvCours;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LibCours;
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
@@ -296,6 +355,8 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private System.Windows.Forms.ToolStripMenuItem updateDeleteCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem getCoursToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ajouterSectionsToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dgvListeCours;
+        private System.Windows.Forms.Panel PanelInterieur;
 
         #endregion
     }

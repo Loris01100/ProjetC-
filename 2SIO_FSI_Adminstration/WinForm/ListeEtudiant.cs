@@ -21,14 +21,14 @@ namespace _2SIO_FSI_Adminstration.WinForm
 
             DAOEtudiant dao = new DAOEtudiant();
             List<Etudiant> mesEtudiants = dao.GetAll();
-            
+    
             dgvEtudiants.Rows.Clear();
             foreach (Etudiant etu in mesEtudiants)
             {
                 int index = dgvEtudiants.Rows.Add();
                 dgvEtudiants.Rows[index].Cells["NomEtudiant"].Value = etu.NomEtudiant;
                 dgvEtudiants.Rows[index].Cells["PrenomEtudiant"].Value = etu.PrenomEtudiant;
-                dgvEtudiants.Rows[index].Cells["LibelleSection"].Value = etu.IdSection.LibelleSection;
+                dgvEtudiants.Rows[index].Cells["LibelleSection"].Value = etu.IdSection?.LibelleSection ?? "Non assigné";  // Gérer les sections nulles
                 dgvEtudiants.Rows[index].Tag = etu.IdEtudiant;
             }
         }
@@ -96,7 +96,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteCours = new updateDeleteSection(null, uti);
+            Form formUpdateDeleteCours = new updateDeleteSection(null, uti, 0);
             formUpdateDeleteCours.Show();
         }
         private void ajouterUnCoursToolStripMenuItem_Click(object sender, EventArgs e)
@@ -110,12 +110,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)

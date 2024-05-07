@@ -1,22 +1,75 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using _2SIO_FSI_Adminstration.Classe;
+using _2SIO_FSI_Adminstration.DAO;
 
 namespace _2SIO_FSI_Adminstration.WinForm
 {
     public partial class AjouterUnCours : Form
     {
         Utilisateur uti;
+        
+        private DAOCours coursDAO;
         public AjouterUnCours(Utilisateur utiConnecte)
         {
             InitializeComponent();
             uti = utiConnecte;
+            RemplirComboBoxSections();
         }
-        private void bQuitter_Click(object sender, EventArgs e)
+        
+        private void RemplirComboBoxSections()
         {
-            Application.Exit();
+            DAOSection dao = new DAOSection();
+            List<Section> mesSections = dao.GetAll();
 
+            cbSection.DisplayMember = "LibelleSection";
+            cbSection.ValueMember = "IdSection";
+            cbSection.DataSource = mesSections;
+        }
+        private void boutonAjouter_Click(object sender, EventArgs e)
+        {
+            string libelle = tbAELibelle.Text;
+            string descriptionCours = tbAEDescr.Text;
+            Section section = cbSection.SelectedItem as Section;
+            
+            if (section == null)
+            {
+                MessageBox.Show("Veuillez sélectionner une section.");
+                return;
+            }
+            
+            bool ajoutReussi = DAOCours.InsertCours(libelle, descriptionCours, section);
+
+            if (ajoutReussi)
+            {
+                MessageBox.Show("Cours ajouté avec succès.");
+                reInitialisation();
+            }
+            else
+            {
+                MessageBox.Show("Erreur lors de l'ajout de la section. Assurez-vous que tous les champs sont remplis.");
+            }
+        }
+        
+        private void reInitialisation()
+        {
+            tbAELibelle.Clear();
+            tbAEDescr.Clear();
+            cbSection.SelectedIndex = -1;
+            
+        }
+        private void boutonEffacer_Click(object sender, EventArgs e)
+        {
+            reInitialisation();
+        }
+
+        private void boutonRetour_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAccueil = new Accueil(uti);
+            formAccueil.Show();
         }
         private void listeDesEtudiantsToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -52,7 +105,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteCours = new updateDeleteSection(null, uti);
+            Form formUpdateDeleteCours = new updateDeleteSection(null, uti, 0);
             formUpdateDeleteCours.Show();
         }
         private void ajouterUnCoursToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,12 +119,6 @@ namespace _2SIO_FSI_Adminstration.WinForm
             this.Hide();
             Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)

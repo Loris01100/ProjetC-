@@ -212,13 +212,6 @@
             this.updateDeleteCoursToolStripMenuItem.Text = "Modification des cours";
             this.updateDeleteCoursToolStripMenuItem.Click += new System.EventHandler(this.updateDeleteCoursToolStripMenuItem_Click);
             // 
-            // getCoursToolStripMenuItem
-            // 
-            this.getCoursToolStripMenuItem.Name = "getCoursToolStripMenuItem";
-            this.getCoursToolStripMenuItem.Size = new System.Drawing.Size(229, 24);
-            this.getCoursToolStripMenuItem.Text = "Cours";
-            this.getCoursToolStripMenuItem.Click += new System.EventHandler(this.getCoursToolStripMenuItem_Click);
-            // 
             // AjoutSection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 25F);

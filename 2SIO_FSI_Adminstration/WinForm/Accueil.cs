@@ -80,14 +80,8 @@ namespace _2SIO_FSI_Adminstration
         private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti);
+            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti, 0);
             formUpdateDeleteSection.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)

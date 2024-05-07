@@ -54,7 +54,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // 
             this.lLogin.AutoSize = true;
             this.lLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(156)))), ((int)(((byte)(84)))));
-            this.lLogin.Location = new System.Drawing.Point(249, 27);
+            this.lLogin.Location = new System.Drawing.Point(176, 24);
             this.lLogin.Name = "lLogin";
             this.lLogin.Size = new System.Drawing.Size(72, 26);
             this.lLogin.TabIndex = 1;
@@ -64,7 +64,7 @@ namespace _2SIO_FSI_Adminstration.WinForm
             // 
             this.lMDP.AutoSize = true;
             this.lMDP.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(156)))), ((int)(((byte)(84)))));
-            this.lMDP.Location = new System.Drawing.Point(174, 64);
+            this.lMDP.Location = new System.Drawing.Point(175, 61);
             this.lMDP.Name = "lMDP";
             this.lMDP.Size = new System.Drawing.Size(145, 26);
             this.lMDP.TabIndex = 2;
