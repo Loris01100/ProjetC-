@@ -16,31 +16,39 @@ namespace _2SIO_FSI_Adminstration.WinForm
         {
             InitializeComponent();
             uti = utiConnecte;
+            dgvSections.CellDoubleClick += dgvSections_CellDoubleClick;
 
-            // Utilisation de ConnexionSQL.Instance pour la connexion
-            using (var myCnx = ConnexionSQL.Instance)
+            DAOSection dao = new DAOSection();
+            List<Section> mesSections = dao.GetAll();
+            
+            dgvSections.Rows.Clear();
+            foreach (Section sec in mesSections)
             {
-                string select = "SELECT * FROM section";
-                using (var myCmd = new NpgsqlCommand(select, myCnx))
-                using (var dr = myCmd.ExecuteReader())
-                {
-                    List<Section> mesSections = new List<Section>();
-                    while (dr.Read())
-                    {
-                        int idSection = dr.GetInt32(0);
-                        string libelleSection = dr.GetString(1);
-
-                        Section uneSection = new Section(idSection, libelleSection);
-                        mesSections.Add(uneSection);
-                    }
-
-                    // Affichage dans le dataGridView
-                    foreach (Section sec in mesSections)
-                    {
-                        dgvSections.Rows.Add(sec.LibelleSection);
-                    }
-                }
+                int index = dgvSections.Rows.Add();
+                dgvSections.Rows[index].Cells["LibelleSection"].Value = sec.LibelleSection;
+                dgvSections.Rows[index].Tag = sec.IdSection;
             }
+        }
+        private void dgvSections_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
+            {
+                int sectionId = (int)dgvSections.Rows[e.RowIndex].Tag;
+                this.Hide();
+                DAOSection dao = new DAOSection();
+                Section section = dao.GetById(sectionId);
+                Form formConsulterSection = new updateDeleteSection(section, uti, sectionId);
+                formConsulterSection.Show();
+            }
+        }
+        
+        private void updateDeleteSection(int sectionId)
+        {
+            this.Hide();
+            DAOSection dao = new DAOSection();
+            Section section = dao.GetById(sectionId);
+            Form formConsulterSection = new updateDeleteSection(section, uti, sectionId);
+            formConsulterSection.Show();
         }
         private void bQuitter_Click(object sender, EventArgs e)
         {
@@ -79,17 +87,17 @@ namespace _2SIO_FSI_Adminstration.WinForm
             Form formListeSection = new ListeSection(uti);
             formListeSection.Show();
         }
-        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
-        }
         private void ListeCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
             Form formListeCours = new ListeCours(uti);
             formListeCours.Show();
+        }
+        private void ajouterSectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAjoutSection = new AjoutSection(uti);
+            formAjoutSection.Show();
         }
         private void ajouterUnCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -97,17 +105,17 @@ namespace _2SIO_FSI_Adminstration.WinForm
             Form formAjouterCours = new AjouterUnCours(uti);
             formAjouterCours.Show();
         }
+        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti, 0);
+            formUpdateDeleteSection.Show();
+        }
         private void updateDeleteCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteCours = new updateDeleteCours(uti);
+            Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
-        }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
         }
         protected override void OnFormClosing(FormClosingEventArgs e)
         {

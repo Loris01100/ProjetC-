@@ -14,11 +14,11 @@ namespace _2SIO_FSI_Adminstration.WinForm
     {
         private DAOSection sectionDAO;
 
-        private Utilisateur x;
+        private Utilisateur uti;
         public AjoutSection(Utilisateur utiConnecte)
         {
             InitializeComponent();
-            x = utiConnecte;
+            uti = utiConnecte;
             sectionDAO = new DAOSection();
         }
         
@@ -54,8 +54,58 @@ namespace _2SIO_FSI_Adminstration.WinForm
         private void boutonRetour_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formAccueil = new Accueil(x);
+            Form formAccueil = new Accueil(uti);
             formAccueil.Show();
+        }
+        
+        private void listeDesEtudiantsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formListeEtudiant = new ListeEtudiant(uti);
+            formListeEtudiant.Show();
+        }
+
+        private void ajouterUnEtudiantToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAjouterEtudiant = new AjoutEtudiant(uti);
+            formAjouterEtudiant.Show();
+        }
+        private void listeDesSectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formListeSection = new ListeSection(uti);
+            formListeSection.Show();
+        }
+        private void ajouterSectionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAjoutSection = new AjoutSection(uti);
+            formAjoutSection.Show();
+        }
+        private void ListeCoursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formListeCours = new ListeCours(uti);
+            formListeCours.Show();
+        }
+        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formUpdateDeleteCours = new updateDeleteSection(null, uti, 0);
+            formUpdateDeleteCours.Show();
+        }
+        private void ajouterUnCoursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formAjouterCours = new AjouterUnCours(uti);
+            formAjouterCours.Show();
+        }
+        private void updateDeleteCoursToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
+            formUpdateDeleteCours.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)
@@ -71,8 +121,10 @@ namespace _2SIO_FSI_Adminstration.WinForm
                     e.Cancel = true;
                     break;
                 default:
+                {
                     Process.GetCurrentProcess().Kill();
                     break;
+                }
             }        
         }
     }

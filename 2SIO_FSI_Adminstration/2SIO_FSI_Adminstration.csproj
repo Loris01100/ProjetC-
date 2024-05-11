@@ -139,12 +139,6 @@
     <Compile Include="WinForm\ConsulterEtudiant.Designer.cs">
       <DependentUpon>ConsulterEtudiant.cs</DependentUpon>
     </Compile>
-    <Compile Include="WinForm\getCours.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="WinForm\getCours.Designer.cs">
-      <DependentUpon>getCours.cs</DependentUpon>
-    </Compile>
     <Compile Include="WinForm\ListeCours.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,9 +195,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\ConsulterEtudiant.resx">
       <DependentUpon>ConsulterEtudiant.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="WinForm\getCours.resx">
-      <DependentUpon>getCours.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WinForm\ListeCours.resx">
       <DependentUpon>ListeCours.cs</DependentUpon>

@@ -53,12 +53,6 @@ namespace _2SIO_FSI_Adminstration
             Form formListeSection = new ListeSection(uti);
             formListeSection.Show();
         }
-        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form formUpdateDeleteSection = new updateDeleteSection(uti);
-            formUpdateDeleteSection.Show();
-        }
         private void ajouterSectionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -80,14 +74,14 @@ namespace _2SIO_FSI_Adminstration
         private void updateDeleteCoursToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formUpdateDeleteCours = new updateDeleteCours(uti);
+            Form formUpdateDeleteCours = new updateDeleteCours(null, uti);
             formUpdateDeleteCours.Show();
         }
-        private void getCoursToolStripMenuItem_Click(object sender, EventArgs e)
+        private void updateDeleteSectionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form formGetCours = new getCours(uti);
-            formGetCours.Show();
+            Form formUpdateDeleteSection = new updateDeleteSection(null ,uti, 0);
+            formUpdateDeleteSection.Show();
         }
         
         protected override void OnFormClosing(FormClosingEventArgs e)
