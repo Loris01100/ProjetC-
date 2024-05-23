@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\\u00E9cole\\ProjetFSIC#\\2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{ED284D57-12A7-42E1-9A6E-05DACC0B73D6}|2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration.csproj|C:\\\u00E9cole\\ProjetFSIC#\\2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration\\2sio_fsi_adminstration\\winform\\connexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ED284D57-12A7-42E1-9A6E-05DACC0B73D6}|2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration.csproj|c:\\\u00E9cole\\projetfsic#\\2sio_fsi_adminstration\\2sio_fsi_adminstration\\2sio_fsi_adminstration\\winform\\connexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED284D57-12A7-42E1-9A6E-05DACC0B73D6}|2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration.csproj|solutionrelative:2sio_fsi_adminstration\\winform\\connexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -15,7 +15,7 @@
       "RelativeMoniker": "D:0:0:{ED284D57-12A7-42E1-9A6E-05DACC0B73D6}|2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration.csproj|solutionrelative:2sio_fsi_adminstration\\winform\\ajoutetudiant.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ED284D57-12A7-42E1-9A6E-05DACC0B73D6}|2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration.csproj|c:\\\u00E9cole\\projetfsic#\\2sio_fsi_adminstration\\2sio_fsi_adminstration\\2sio_fsi_adminstration\\winform\\listeetudiant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{ED284D57-12A7-42E1-9A6E-05DACC0B73D6}|2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration.csproj|C:\\\u00E9cole\\ProjetFSIC#\\2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration\\2sio_fsi_adminstration\\winform\\listeetudiant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ED284D57-12A7-42E1-9A6E-05DACC0B73D6}|2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration.csproj|solutionrelative:2sio_fsi_adminstration\\winform\\listeetudiant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -50,8 +50,7 @@
               "RelativeToolTip": "2SIO_FSI_Adminstration\\WinForm\\Accueil.cs",
               "ViewState": "AQIAABsAAAAAAAAAAAA5wCQAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T13:12:32.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-25T13:12:32.389Z"
             },
             {
               "$type": "Document",
@@ -63,8 +62,7 @@
               "RelativeToolTip": "2SIO_FSI_Adminstration\\WinForm\\ListeEtudiant.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAQwBEAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T12:46:44.293Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-25T12:46:44.293Z"
             },
             {
               "$type": "Document",
@@ -75,8 +73,7 @@
               "ToolTip": "C:\\\u00E9cole\\ProjetFSIC#\\2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration\\WinForm\\ListeEtudiant.cs [Design]",
               "RelativeToolTip": "2SIO_FSI_Adminstration\\WinForm\\ListeEtudiant.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-25T12:52:35.829Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-03-25T12:52:35.829Z"
             },
             {
               "$type": "Document",
@@ -88,8 +85,7 @@
               "RelativeToolTip": "2SIO_FSI_Adminstration\\FSI.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABIAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T08:49:56.595Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T08:49:56.595Z"
             },
             {
               "$type": "Document",
@@ -99,7 +95,7 @@
               "RelativeDocumentMoniker": "2SIO_FSI_Adminstration\\WinForm\\Connexion.cs",
               "ToolTip": "C:\\\u00E9cole\\ProjetFSIC#\\2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration\\2SIO_FSI_Adminstration\\WinForm\\Connexion.cs",
               "RelativeToolTip": "2SIO_FSI_Adminstration\\WinForm\\Connexion.cs",
-              "ViewState": "AQIAADAAAAAAAAAAAAAYwDYAAAANAAAA",
+              "ViewState": "AQIAACcAAAAAAAAAAAAYwDYAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-22T08:47:39.132Z",
               "EditorCaption": ""
@@ -114,8 +110,7 @@
               "RelativeToolTip": "2SIO_FSI_Adminstration\\WinForm\\AjoutEtudiant.Designer.cs",
               "ViewState": "AQIAAAQAAAAAAAAAAAAAwBYAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T08:44:57.52Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T08:44:57.52Z"
             },
             {
               "$type": "Document",
@@ -127,8 +122,7 @@
               "RelativeToolTip": "2SIO_FSI_Adminstration\\WinForm\\AjoutEtudiant.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAQwCAAAABkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-22T08:44:57.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-22T08:44:57.657Z"
             }
           ]
         }
